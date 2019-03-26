@@ -1,0 +1,32 @@
+414.png
+
+person identified : Donald Trump
+emotion: Angry	
+text:["TRUMP'S FACE LOOKS LIKE A TRAGIC ACCIDENT", '/', "A;T 'FHE ANUS", 'BLEACHING SALON"']
+	
+	
+	
+803340720.png
+
+person identified : Rahul Gandhi
+emotion: sad	
+text:['AIJR FIR NAA', 'DRAGON ALL$ ME SE DINOSMJES N!KLA ITNA BADA']
+	
+	
+
+26meme.png
+
+person identified : Arvind Kejriwal
+emotion: happy	
+text:["IDON!T CARE WHO YO'U ARE, BUT I-LL FIND YOU,", "P'-", '-.: %>.', 'AND WILL CONTEST ELECTION AGAINST YOU']
+	
+	
+	
+
+index.jpeg
+
+person identified : Obama
+emotion: sad	
+text:['MYTOAST GOTDIJRNT TNIS MDRNING', 'THANKS OBAMA']
+	
+	

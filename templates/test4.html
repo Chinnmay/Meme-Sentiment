@@ -1,0 +1,110 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <!-- Page Content -->
+    <div class="container">
+
+      <div class="row">
+      <div class="col-md-6">
+          <form method="POST" enctype="multipart/form-data">
+          <div class="form-group">
+              <div class="input-group">
+                  <span class="input-group-btn">
+                      <span class="btn btn-info btn-file" >
+                          Browse <input type="file" id="imgInp" name="photo">
+                      </span>
+                  </span>
+                  <div style = "width: 15%;display: inline-block;"></div>
+                    <input type="text" class="form-control" readonly>
+                  <div style = "width: 15%;display: inline-block;"></div>
+                  <input type="submit" class="btn btn-info" role="button" id="butup">
+              </div>
+             <!-- <img id='img-upload'/>-->
+          </div>
+      </div>
+      </div>
+
+      <!-- Portfolio Item Row -->
+      <div class="row">
+
+        <div class="col-md-4" style="text-align:center;">
+          <img  alt="Input Image" src="/static/test44.jpeg" height="60%" width="100%">
+        </div>
+
+       <div class="col-md-5">
+         <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="2" style="text-align:center;">Summary</th>
+        <th>Feedback</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Face's Identified</td>
+        <td>Obama</td>
+        <td>
+          <a href="#">
+          <!-- <span class="glyphicon glyphicon-ok"></span> -->
+
+          <i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i>
+
+        </a>
+        <a href="#">
+          <!-- <span class ="glyphicon glyphicon-remove"></span>-->
+          <i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i>
+        </a>
+      </td>
+      </tr>
+      <tr>
+        <td>Emotion Identified</td>
+        <td>sad</td>
+        <td>
+
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i></a>
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i></a>
+        </td>
+      </tr>
+      <tr>
+        <td>Text Extracted from Image</td>
+        <td>['MYTOAST GOTDIJRNT TNIS MDRNING', 'THANKS OBAMA']
+</td>
+        <td>
+
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i></a>
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i></a>
+        </td>
+      </tr>
+      <tr>
+        <td>Text Sentiment</td>
+        <td>To be determined</td>
+        <td>---</td>
+      </tr>
+      <tr>
+        <td>Overall Sentiment</td>
+        <td>To be determined</td>
+        <td>---</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+       </div>
+
+
+        <div class="col-md-3">
+          <h3 class="my-3">Project Description</h3>
+          <p>Meme Sentiment Extraction will be identifying sentiment of that meme by corelating the facial emotion of the person present in the image and sentiment of text</p>
+          <h3 class="my-3">Sentiments</h3>
+          <ul>
+            <li>Sarcasm</li>
+            <li>Pun</li>
+            <li>Wit</li>
+            <li>Irony</li>
+          </ul>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+{% endblock %}

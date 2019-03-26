@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <link class="jsbin" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1/themes/base/jquery-ui.css" rel="stylesheet" type="text/css" />
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+ <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title>Meme Sentiment Extraction</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="/static/css/portfolio-item.css" rel="stylesheet">
+     <link href="/static/css/imgupload.css" rel="stylesheet">
+    <style type="text/css">
+     .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   }
+
+   div.a {
+    line-height: large;
+    font-size: 20px;
+}
+   </style>
+
+   <script src="/static/imgup.js"></script>
+
+<!-- <script type="text/javascript">
+  function myFunction(x) {
+
+}</script> -->
+
+  </head>
+
+  <body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="module.html" style="font-size: 250%">Meme Sentiment Extraction</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{{ url_for('home') }}" style="font-size: 170%;margin-right: 5px">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{{ url_for('about') }}" style="font-size: 170%; text-align: right;">About</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+<br>
+    <!-- Page Content -->
+
+
+
+
+
+{% block body %}{% endblock %}
+      <!-- Related Projects Row -->
+      <h3 class="my-4" style="text-align: center; font-family: impact;font-size: 200%">Example's</h3>
+
+      <div class="row">
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="{{ url_for('example1') }}">
+            <img  src="/static/test11.jpg" alt="" height="90%" width="100%">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="{{ url_for('example2') }}">
+            <img  src="/static/test22.jpeg" alt="" height="90%" width="100%">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="{{ url_for('example3') }}">
+            <img  src="static/test33.jpg" alt="" height="90%" width="100%">
+          </a>
+        </div>
+
+        <div class="col-md-3 col-sm-6 mb-4">
+          <a href="{{ url_for('example4') }}">
+            <img  src="/static/test44.jpeg" alt="" height="90%" width="100%">
+          </a>
+        </div>
+
+      </div>
+      <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="py-5 bg-dark">
+      <div class="container">
+        <p class="m-0 text-center text-white" style="font-size: 150%" >Copyright &copy; Meme Sentiment Extraction Group and C-DAC</p>
+      </div>
+      <!-- /.container -->
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+  </body>
+
+</html>

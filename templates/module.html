@@ -1,0 +1,179 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+<!-- <script src="https://static.anychart.com/js/8.0.1/anychart-core.min.js"></script>
+<script src="https://static.anychart.com/js/8.0.1/anychart-pie.min.js"></script> -->
+<script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+
+<script type="text/javascript">
+    function ExploreText(textemoname){
+      var len = {{text_emotion_len}}
+      console.log(len);
+      var textemoval = JSON.parse("{{ textemoval }}")
+      console.log(textemoval[0])
+
+      console.log(textemoname);
+
+
+      // var textemoname = JSON.parse("{{ textemoname}}")
+      var arr = []
+      var d = {}
+      for(var i = 0; i < len; i++)
+      {
+        d["y"] = textemoval[i]
+        d["label"] = textemoname[i]
+        arr.push(d)
+        d = {}
+      }
+
+
+      var chart = new CanvasJS.Chart("chartContainer", {
+      	animationEnabled: true,
+      	title: {
+      		text: "Text Sentiment Gradient Score"
+      	},
+      	data: [{
+      		type: "pie",
+      		startAngle: 240,
+      		yValueFormatString: "##0.00\"%\"",
+      		indexLabel: "{label} {y}",
+
+          // showInLegend: true,
+          indexLabelPlacement: "inside",
+          indexLabelFontColor: "#FFFFFF",
+          indexLabelFontSize: 15,
+          indexLabelMaxWidth: 53,
+
+      		dataPoints:arr
+
+      	}]
+      });
+      chart.render();
+
+
+
+     }
+</script>
+
+
+    <!-- Page Content -->
+    <div class="container">
+
+<div class="row">
+<div class="col-md-6">
+    <form method="POST" enctype="multipart/form-data">
+    <div class="form-group">
+        <div class="input-group">
+            <span class="input-group-btn">
+                <span class="btn btn-info btn-file" >
+                    Browse <input type="file" id="imgInp" name="photo">
+                </span>
+            </span>
+            <div style = "width: 15%;display: inline-block;"></div>
+              <input type="text" class="form-control" readonly>
+            <div style = "width: 15%;display: inline-block;"></div>
+            <input type="submit" class="btn btn-info" role="button" id="butup">
+        </div>
+       <!-- <img id='img-upload'/>-->
+    </div>
+</div>
+</div>
+
+      <!-- Portfolio Item Row -->
+      <div class="row">
+
+        <div class="col-md-4" style="text-align:center;">
+          <img  src = "{{ url_for('static', filename = file ) }}" height="90%" width="100%" alt="Input Image" id='img-upload'/ >
+        </div>
+
+
+       <div class="col-md-5" >
+         <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th colspan="2" style="text-align:center;font-size: 170%;" height="50">Summary</th>
+        <th style="font-size: 170%;">Feedback</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td height="50" style="font-size: 170%;">Faces Identified</td>
+        <td height="50" style="font-size: 170%;">{{ faces }}</td>
+        <td height="50" style="font-size: 170%;">
+          <a href="#">
+          <!-- <span class="glyphicon glyphicon-ok"></span> -->
+
+          <i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i>
+
+        </a>
+        <a href="#">
+          <!-- <span class ="glyphicon glyphicon-remove"></span>-->
+          <i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i>
+        </a>
+      </td>
+      </tr>
+      <tr>
+        <td height="50"style="font-size: 170%;">Emotion Identified</td>
+        <td height="50"style="font-size: 170%;">{{ emotion }}</td>
+        <td height="50"style="font-size: 170%;">
+
+          <!-- <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i></a>
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i></a> -->
+          <div class="text-center">
+          <button type="button" class="btn btn-info" >Explore</button></div>
+        </td>
+      </tr>
+      <tr>
+        <td height="50"style="font-size: 170%;">Text Extracted from Image</td>
+        <td height="50"style="font-size: 170%;">{{ ext_text }}</td>
+        <td height="50"style="font-size: 170%;">
+
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i></a>
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i></a>
+        </td>
+      </tr>
+      <tr>
+        <td height="50"style="font-size: 170%;">Text Sentiment</td>
+        <td height="50"style="font-size: 170%;">{{ stronger_emotion }}</td>
+        <td height="50"style="font-size: 170%;">
+          <!-- <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i></a>
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i></a> -->
+          <div class="text-center">
+          <!-- <button type="button" class="btn btn-info" onclick="ExploreText()">Explore</button></div> -->
+
+          <button  type="button" class="btn btn-info" onclick="ExploreText({{textemoname}})">Explore</button></div>
+
+        </td>
+      </tr>
+      <tr>
+        <td height="50"style="font-size: 170%;">Overall Sentiment</td>
+        <td height="50"style="font-size: 170%;">{{overall_sentiment}}</td>
+        <td height="50"style="font-size: 170%;">---</td>
+      </tr>
+    </tbody>
+  </table>
+
+
+       </div>
+
+
+        <div class="col-md-3">
+          <!-- <h3 class="my-3" style="font-size: 170%; font-family: arial"><mark><b>Project Description</b></mark></h3>
+          <p style="font-size: 170%;">Meme Sentiment Extraction will be identifying sentiment of that meme by corelating the facial emotion of the person present in the image and sentiment of text</p>
+          <h3 class="my-3" style="font-size: 170%; font-family: arial"><mark><b>Sentiments</b></mark></h3>
+          <ul style="font-size: 170%;">
+            <li>Sarcasm</li>
+            <li>Pun</li>
+            <li>Wit</li>
+            <li>Irony</li>
+          </ul>
+        </div> -->
+
+        <div id="chartContainer"></div>
+
+      </div>
+      <!-- /.row -->
+
+{% endblock %}

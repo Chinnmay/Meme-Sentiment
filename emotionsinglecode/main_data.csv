@@ -1,0 +1,187 @@
+meme id,Manual Emotion,Machine Image  Labeling,Text on image (Manual),Manual Textual Emotion labelling(7 categories),Combined trigger words,Percentage trigger words,Manual Textual labelling (pun/sarcasm),Overall sentiment
+0,Hillary Clinton : surprise,Hilary Clinton: neutral,DID YOU KNOW 1 OUT OF 3 HILLARY SUPPORTERS ARE  JUST  AS STUPID  AS THE OTHER 2,angry,stupid,5.88,sarcasm,negative
+1,Unknown : neutral,unknown: disgust,COMPLAINT I DONT LIKE HILLARY OR TRUMP DOESNT CHECK OUT THIRD PARTY CANDIDATES,angry,"complaint, dont, doesnt",23.08,sarcasm,negative
+2,Unknown : happy,unknown: angry,WHY THE FUCK WON'T HILLARY RELEASE HER TRANSCRIPTS AND TRUMP WON'T RELEASE HIS TAXES . AND WHY  ARE PEOPLE NOT PUSHING HARDER FOR THIS,disgust,"FUCK, WONT, NOT ",12.5,--,negative
+3,Unknown : happy,unknown: angry,ACCUSES YOU OF SEXISM LIKES HILLARY JUST BECAUSE SHE'S A WOMAN,sad,SEXISM ,9.09,sarcasm,neutral
+4,unknown : angry,unknown: None,"AM THE ONLY ONE AROUND HERE WHO THINKS ITS RIDICULOUS THAT WHEN HILLARY CLINTON CHANGES  A BIGOTED STANCE SHES ""EVOLVING"" BUT WHEN TRUMP CHANGES A BIGOTED STANCE HE'S A FRAUD",fear, COMPLAINS,3.33,sarcasm,negative
+5,Unknown : happy,unknown: angry,I'M VOTING HILLARY BECAUSE TRUMP WILLRUIN THIS COUNTRY AND WHAT HE WANTS TO DO WITH MUSLIMS IS ILLEGAL  DOESN'T CARE ABOUT HILLARY'S EMAIL SERVER,happy,"voting, ILLEGAL,",12.5,sarcasm,positive
+6,Donald Trump : neutral,Donald Trump: angry,"IF YOU DISLIKE  TRUMP, YOU SHOULD HELP VOTE HIM  IN . IN THIS WAY, WE CAN CHANGE HIS PARTY FROM WITHIN. YES, HILLARY SUPPORTERS, THIS IS HOW RIDICULOUS YOU SOUND",angry,"ridiculous, dislike, VOTE",10,pun,negative
+7,Unknown : happy,unknown: None,LEAVING THE COUNTRY IF HILLARY OR TRUMP GET'S ELECTED? GIVE US A CALL - LET'S GET YOUR HOUSE SOLD,happy,"call, get, sold",15.79,sarcasm,positive
+8,Unknown : happy,unknown: happy,WHEN READING THE FBI HILLARY REPORT IS BETTER THAN BOOKS YOU BROUGHT ON VACATION,happy,"reading, better, vacation, REPORT, BOOKS",35.71,sarcasm,positive
+9,Unknown : surprise,unknown : none,"FOR YOU , HILLARY'S NOMINATION WAS THE MOST IMPORTANT DAY OF YOUR LIFE. BUT FOR ME IT WAS TUESDAY",neutral,"you, me, NOMINATION",15.79,pun,neutral
+10,Unknown : neutral,Rajnikant: None,"WHAT IF I TOLD YOU HILLARY AND TRUMP ARE BOTH SHIT , AND THE STATES ARE FUCKED EITHER WAY",fear,"shit, fucked",10.53,sarcasm,negative
+11,Hillary Clinton : sad,Hilary Clinton: neutral,"""I OFTEN FEEL LIKE THERE'S THE HILLARY STANDARD.."" ""AND THERE'S THE STANDARD FOR EVERYONE ELSE""",happy,"everyon, else, standard ",20,,positive
+12,Unknown : fear,unknown: disgust,WHAT IF TRUMP HAS HILLARY'S TRANSCRIPTS BUT HE IS JUST WAITING TO SEE IF SHE BECOMES THE NOMINEE TO DESTROY HER,fear,"destroy ,TRANSCRIPTS, NOMINEE",14.29,,negative
+13,Unknown : happy,unknown: happy,WHY THE HELL WOULD RUSSIANS  RELEASE HACKED EMAILS RIGHT BEFORE THE DNC? BECAUSE THEY PREFER TRUMP OR HILLARY,disgust,"hell ,RUSSIANS, HACKED",16.67,,negative
+14,unknown : None,unknown : none,"I CANT WAIT FOR USA ELECTIONS TO END... SO WE CAN RETURN TO NORMAL TOPICS INSTEAD OF LOOKING AT TRUMP,BERNIE OR HILLARY",sad,"cant, wait, end, ELECTIONS",18.18,,negative
+15,Donald Trump : sad,Donald Trump: None,TRUMP: HILLARY WILL BE ELECTED PRESIDENT ONLY OVER MY DEAD BODY AMERICA: YOU ALWAYS DID MAKE GREAT DEALS DONALD. WE ACCEPT.,happy,"great, accept ,DEAD BODY, DEALS",19.05,sarcasm,positive
+16,"Hillary Clinton : sad, Donald Trump : sad",Hilary Clinton: angry,ARE THESE TWO REALLY THE BEST WE CAN COME UP WITH ?,disgust,"really ,BEST",16.67,,negative
+17,Unknown : surprise,unknown : none,WITH DONALD TRUMP NOW RUNNING UNOPPOSED HIS SUPPORTERS COULD BEAT HILLARY BEFORE THE GENERAL BY VOTIND FOR SANDERS IN OPEN PRIMARIES,fear,"beat ,UNOPPOSED",9.52,,negative
+18,Unknown : neutral,"Manmohan Singh: None, unknown : none, unknown : none,unknown : none",Hillary as President is like Trevor Noah on The Daily Show - not the worst choice ever but we preffered an old jewish guy instead    Danish Anwar @terrorsuspect  ,sad,"but, not the worst ",7.14,sarcasm,negative
+19,Unknown : angry,unknown: angry,YOUR RECEPIES WERE SO CONTROVERSIAL HILLARY CLINTON DELETED THEM ,angry,"contravertial, RECEPIES",22.22,sarcasm,negative
+20,unknown : None,unknown : none,A. HILLARY B.TRUMP I CHOOSE C.,neutral,"trump, hillary, neutral, CHOOSE",66.67,sarcasm,negative
+21,Donald Trump : happy,"Donald Trump: happy, Donald Trump: None",HAS BEEN REGULARLY CRITICIZING HILLARY'S SPOUSE FOR THINGS THAT HE DID 20+ YEARS AGO DISMISSES HIS OWN BEHAVIOUR BECAUSE IT HAPPENED OVER 11 YEARS AGO,angry,"CRITICIZING,DISMISSES, BEHAVIOUR",12,sarcasm,negative
+22,"Unknown : happy, Unknown : happy","unknown : none, Rahul Gandhi: disgust",FEEL FREE TO BLOCK AND UNFRIEND ME CAUSE IM NOT VOTING FOR HILLARY CLINTON,happy,"feel free, I'm, voting, BLOCK, UNFRIEND",35.71,sarcasm,positive
+23,unknown : None,unknown : none,HILLARY IS SO CORRUPT WHY IS SHE STILL IN THE RACE? OHHHH....,disgust,"still, corrupt",16.67,,negative
+24,Unknown : neutral,unknown : none,"THESE EXTREME NATIONS, THEY DONT TREAT WOMEN WITH RESPECT LIKE WE DO HERE. TELL ME ABOUT YOUR SHIRT, WHAT DOES IT SAY? IT SAYS HILLARY SUCKS BUT NOT LIKE MONICA. HILARIOUS . SO TELL ME MORE ABOUT TREATING WOMEN WITH RESPECT.",angry,"extreme, treat, SUCKS",7.32,sarcasm,negative
+25,unknown : None,unknown : none,I DON'T CARE ABOUT HILLIARY'S EMAIL SERVER EVEN A LITTLE AND I DON'T THINK IT MATTERS AS MUCH AS PEOPLE WANT IT TO,happy,"don’t care, don’t think",8.7,,positive
+26,Unknown : happy,unknown: neutral,THIS WILL BE THE SCANDAL THAT'LL STOP CROOKED HILLARY'S CAMPAIGN DEAD IN ITS TRACKS SAYS TRUMP SUPPORTER FOR THE FORTIETH TIME THIS MONTH,angry,"crooked, dead ,SCANDAL",13.04,sarcasm,negative
+27,Bad Luck Brian : happy,Bad Luck  Brian: happy,"SPENDS THE LAST 3 YEARS DIGGING ON HILLARY CLINTON'S EMAIL SCANDAL ON HIS RADIO AND TV SHOWS ""NO CHARGES"" ANNOUNCED BY FBI DIRECTOR TODAY",disgust,"digging ,EMAIL SCANDAL",8.33,sarcasm,negative
+28,"Donald Trump : happy, Hillary Clinton : happy","Donald Trump: disgust, Hilary Clinton: happy","GO HOME, AMERICA YOU'RE DRUNK",neutral,you're drunk,20,sarcasm,negative
+29,Unknown : happy,unknown : none,"SOON AFTER THE ELECTION AND AFTER CTR HAS LEFT, REDDIT WILL GO BACK TO HATING HILLARY CLINTON I GUARANTEE IT ",angry,hating,5,,negative
+30,unknown : None,unknown : none,"TRUMP'S POLICIES WILL GIVE ME $750 MORE PER MONTH ON MY PAYCHECK BUT I'M NOT VOTING FOR HIM BECAUSE HE SAID MEAN THINGS. WHEN MY FAMILY STARVES TO DEATH BECAUSE I CAN AFFORD TO PAY HILLARY'S TAXES AND BUY FOOD, ATLEAST THEY WON'T DIE WITH HURT FEELINGS",sad,"mean things, VOTING, STARVES, DEATH, HURT, FEELINGS",12.77,,negative
+31,unknown : fear,unknown : none,THE NUMBER OF HILLARY CLINTON EMAIL BASHING THREADS IS TOO DAMN HIGH,neutral,"too ,HIGH",16.67,,negative
+32,Unknown : happy,unknown: angry,WANTS HILLARY TO GET BUSTED FEIGNS INCOMPETENCE TO PUT EVIDENCE ON REDDIT,angry,"busted, incompetence,EVIDENCE",25,sarcasm,positive
+33,unknown : angry,unknown: None,AM I THE ONLY ONE THAT THINKS THE STAR OF DAVID USED IN THE HILLARY TWEETS BY DONALD TRUMP WAS USED TO GET THE ANTISEMETIC AND NEO NAZI VOTES?,sad,"only one,  ANTISEMATIC, NEO NAZI VOTES",10.34,,negative
+34,Unknown : sad,unknown : none,"DONALD TRUMP, THE MAN WHO HAS HANDED ME THIS ELECTION YOU THE REAL MVP",happy,"real, man ,MVP",21.43,,positive
+35,"Unknown : neutral, Hillary Clinton : neutral","unknown: happy, unknown : none, Hilary Clinton: neutral","I DELETED 18 MINUTES REORDINGS AND HAD TO RESIGN AS PRESIDENT I DELETED 30,000 E-MAILS AND I'M RUNNING FOR PRESIDENT",sad,"resign ,DELETED, RECORDINGS, EMAILS",20,sarcasm,negative
+36,Donald Trump : happy,Donald Trump: happy,HAPPY CHINESE NEW YEAR! THE BEST EGG ROLLS ARE MADE BY TRUMP TOWER GRILL! I LOVE ASIANS,happy,"happy, best, love",17.65,,positive
+37,Unknown : surprise,unknown: None,WHO CARES WHAT TRUMP SAID IN 2005 HE WAS DEMOCRAT BACK THEN SO IT'S NOT HIS FAULT,neutral,"not his fault, who cares ,DEMOCRAT",17.65,,positive
+38,"Unknown : surprise, unknown : neutral","unknown: angry, unknown: angry","UM, HE'S AGAINST THE WAR. MY BEST FRIEND'S SISTER'S BOYFRIEND'S BROTHER'S GIRLFRIEND HEARD FROM THIS GUY WHO KNOWS THIS KID WHO'S GOING WITH THE GIRL WHO SAW DONALD DENY THE WAR AT 31 FLAVOURS, LAST NIGHT. I GUESS IT'S PRETTY SERIOUS.",happy,"WAR, DENY, FLAVOURS, SERIOUS",9.76,sarcasm,negative
+39,"Hillary Clinton : happy, unknown : happy",Hilary Clinton: None,TRUMP CAN'T EVEN HANDLE THE ROUGH AND TUMBLE OF A PRESIDENTIAL CAMPAIGN HE CRUSHED 16 0F THE MOST POWERFUL REPUBLICANS IN THE COUNTRY! AND YOU HAD TO CHEAT TO FINISH OFF A 74 YEAR OLD COMMUNIST!,angry,"ROUGH, TUMBLE, CAMPAIGN, CRUSHED,REPUBLICANS, HEAT, COMMUNIST",19.44,sarcasm,positive
+41,Unknown : disgust,unknown : none,IF RES COULD KEEP R/THE_DONALDS PRETEEN HORSESHIT FILTERED OUT THAT'D BE GREAT,," HORSESHEET, FILTERED",16.67,,negative
+42,Unknown : surprise,unknown: None,MELENIA TRUMP SAID DONALD WOULD NEVER GIVE US UP OR LET US DOWN SHE NEVER SAID HE WOULDN'T RUN AROUND AND DESERT US,disgust,"desert, RUN AROUND",8.7,sarcasm,negative
+43,Unknown : surprise,unknown : none,IF TRUMP BECOMES PRESIDENT WE'LL BE LIVING IN THE PARALLEL UNIVERSE WHERE TRUMP BECAME PRESIDENT,neutral,"president , where ,PARALLEL UNIVERSE",20,sarcasm,negative
+44,Donald Trump : angry,Donald Trump: angry,"""WHAT HAVE YOU GOT TO LOSE?"" TRUMP 2016",sad,lose,12.5,sarcasm,positive
+45,Unknown : neutral,unknown: happy,"WILL BLAME BERNIE SUPPORTERS IF SHE LOSES TO TRUMP, I GUARANTEE IT",sad,"blame, loses",16.67,,negative
+46,Bad Luck Brian : happy,Bad Luck Brian: happy,SAYS WILL MOVE TO CANADA IF TRUMP IS NOMINEE CANADA BURNS DOWN,sad,"move, NOMINEE, BURNS DOWN",25,sarcasm,negative
+47,Hillary Clinton : surprise,unknown : none,ASKING A BERNIE SUPPORTER TO VOTE FOR HILLARY BECAUSE TRUMP MIGHT WIN IS LIKE ASKING REPUBLICAN TO HAVE A ABORTION BECAUSE THEY MIGHT HAVE A TRANSGENDER CHILD,fear,"asking REPUBLICAN, ABORTION, TRANSGENDER",11.11,,negative
+49,Unknown : happy,unknown: angry,PROTEST TRUMP FOR SPREADING HATE AND PROMOTING VOILENCE BY BEING VOILENT AND HATEFUL TO HIS SUPPORTERS,disgust,"protest, HATE, VIOLENCE, VIOLENT, HATEFUL",31.25,sarcasm,negative
+50,Unknown : happy,unknown: angry,WHY THE FUCK IS THERE ANOTHER DONALD TRUMP SUBREDDIT,angry,fuck,11.11,,negative
+52,"Unknown : sad , unknown : sad","unknown: angry, unknown: disgust",IF DONALD TRUMP GETS ELECTED PRESIDENT WE'RE MOVING INTO A HOUSE AGAIN BECAUSE AMERICANS WILL GET JOBS BACK,happy,"get elected, moving, get jobs, JOBS BACK",22.22,,positive
+54,Bad Luck Brian : happy,Bad Luck Brian: happy,WENT ON REDDIT TO ESCAPE TRUMP IN CORPORATE MEDIA /R/THE_DONALD HAS MADE THAT IMPOSSIBLE,sad," ESCAPE, MEDIA, IMPOSSIBLE",21.43,sarcasm,negative
+55,Unknown : neutral,unknown : none,WHAT IF I TOLD YOU MARINES HAVE BEEN TALKING LIKE TRUMP FOR 241 YEARS,surprise,"what if I told you ,MARINE",14.29,sarcasm,negative
+56,Unknown : neutral,unknown : none,WHAT IF I TOLD YOU THAT EVEN THOUGH THEY GET THEIR PARTIES WONDERFUL NOMINATIONS HILLARY CLINTON AND DONALD TRUMP ARE STILL NOT ACTUALLY YOU'RE ONLY CHOICES,surprise,"what if I told you, NOMINATIONS, ONLY CHOICES",11.54,,positive
+57,unknown : angry,unknown: None,AM I THE ONLY ONE AROUND HERE WHO FINDS /r/THE_DONALD REALLY OBNOXIOUS AND IMMATURE,disgust,"OBNOXIOUS, IMMATURE",14.29,,negative
+58,Unknown : neutral,unknown : none,WHAT IF I TOLD YOU IF /WHEN TRUMP LOSES WE ARE STILL GETTING HILLARY?,happy,"still ,getting, LOSES",21.43,,positive
+59,Donald Trump : sad,Donald Trump: angry,"I CAN CARE LESS WHAT THE MEDIA SAYS, I'M VOTING TRUMP! IFYOU AGREE PLEASE LIKE AND SHARE!",happy,"care less, voting, agree",17.65,,positive
+61,"Unknown : neutral, unknown : neutral",unknown: None,"NO, I'M NOT THE FUTURE FIRST WOMAN PRES DRINKIN RUSSIAN COKE WITH RUSSIA NO NO, DONALD TRUMP IS THE ASSHOLE",disgust,"FUTURE, ASSHOLE",10,sarcasm,negative
+62,"unknown : neutral, Donald Trump : surprise, unknown : neutral","unknown: angry, Donald Trump: disgust, unknown: disgust",DONALD TRUMP HAS AIDES.,neutral, AIDES,25,,negative
+63,unknown: neutral,unknown : none,MAKE FUN OF TRUMP SUPPORTERS AT A RALLY AND  NO ONE BATS AN EYE MAKE FUN OF PEOPLE  IN CHINA TOWN AND EVERYONE LOSES THEIR MIND ,disgust,"loses their mind, FUN",7.69,,negative
+64,Unknown : happy,unknown: happy,HEY /R/THE DONALD - IF YOU HATE REDDIT SO MUCH EXPLAIN TO ME... WHY DID YOU BUY WELL OVER $500 OF REDDIT GOLD JUST DURING TRUMPS AMA?,angry,"hate, why",7.41,,negative
+67,Unknown : happy,unknown: happy,"PUTS COUNTRY AHEAD OF PARTY DOES NOT ENDORSE TRUMP,DISTANCES HIMSELF FROM REPUBLICAN CONVENTION ",happy,"country ahead,  ENDORSE, REPUBLICAN CONVENTION",23.08,,positive
+68,Unknown : surprise,"unknown : none, unknown : none",/R/THE_DONALD IS FULL OF FAKE TRUMP SUPPORTER TROLLS TO MAKE PEOPLE DESPISE TRUMP EVEN MORE AND BE COMPLETELY UNWILLINGLY  TO EVEN CONSIDER VOTING FOR HIM,sad,"despise, unwilling,FAKE, TROLLS",16,,negative
+70,Unknown : neutral,"unknown: angry, unknown : none",THE LOOK ON YOUR FACE WHEN DONALD TRUMP WON'T GRAB YOUR PUSSY,sad,"wont, LOOK, PUSSY",25,sarcasm,negative
+71,"Barack Obama : sad, Donald Trump : happy","Barack Obama: None, Donald Trump: angry","""IF TRUMP IS ELECTED HE WILL REVERSE EVERYTHING I'VE DONE"". ""BELIEVE ME THAT IS THE PLAN""",sad,"reverse, I've done",12.5,,positive
+75,unknown : neutral,unknown: angry,HEAD OF SECURITY AND PERSONAL BODYGUARD TRUMP 2016,neutral,"personal, HEAD, SECURITY, BODYGAURD",50,sarcasm,negative
+76,unknown : disgust,unknown: angry,IF YOU COULD PLEASE NOT ELECT TRUMP AS YOUR PRESIDENT THAT WOULD BE GREAT,happy,"great, not,ELECT",21.43,,positive
+77,Hillary Clinton : happy,Hilary Clinton: happy,WANTS TO WIN PRESIDENCY FAIR AND SQUARE. ADVISES TRUMP TO DELETE HIS TWITTER ACCOUNT TO PREVENT SELF-SABOTAGE,neutral,"advices ,FAIR AND SQUARE, SELF-SABOTAGE",17.65,sarcasm,negative
+78,"unknown : happy
+",unknown: None,"BRAVERY IS HAVING A MOB THROW EGGS, BOTTLES AND PUNCHES AT YOU AND STANDING PROUD FOR WHAT YOU BELIEVE IS RIGHT",happy,"proud, right, BRAVERY",14.29,,positive
+80,Unknown : happy,unknown: happy,"ON TUESDAY, ""YOUNG EINSTEIN"" STAR GENE WILDMAN WAS SET TO TESTIFY AT HILLARY CLINTON'S CORRUPTION TRIAL AT THE U.N. TODAY, HE WAS FOUND DEAD. BUT TELL ME AGAIN ABOUT HOW TRUMP IS THE BAD GUY?",surprise," CORRUPTION TRIAL, DEAD, BAD",8.57,,positive
+81,unknown : happy,unknown: angry,VIOLENTLY PROTESTS TRUMP IN CA TO HELP PROVE THE NEED OF THE WALL,, ,0,,
+82,Unknown : disgust,unknown : none,DONALD TRUMP + DONALD DUCK = DONALD TRUCK,neutral, DONALD DUCK,12.5,,negative
+84,Unknown : neutral,Narendra Modi: None,TWO STEPS FORWARD. ONE TRUMP BACK,neutral, STEPS,16.67,sarcasm,negative
+86,Unknown : happy,unknown: happy,R/THE_DONALD IS PISSED BECAUSE THEY ARE GETTING CENSORED ON OTHER SUBS? PLEASE REMIND ME AGAIN WHY THEY BANNED ME FOR POSTING OPPOSING VIEWPOINTS,disgust,"banned, opposing ,PISSED, CENSORED",17.39,,negative
+87,unknown: none,unknown : none,"I WILL KILL ISIS. I WILL KILL ISI SO HARD. ""MISTER TRUMP, THE QUESTION WAS IF YOU WANTED VANILLA OR CHOCOLATE ICE CREAM"" WHERE ARE HILLARY'S 30.000 EMAILS?",angry," KILL, ICE CREAM",7.14,sarcasm,negative
+89,Bad Luck Brian : happy,Bad Luck Brian: happy,MAKES CHANGES TO KEEP /R/THE_DONALD OFF THE FRONT PAGE. REDDITORS FIND OUT ABOUT IT FROM ALL OF THE /R/THE_DONALD POSTS ON THE FRONT PAGE,neutral, ,0,,negative
+90,Donald Trump : angry,Donald Trump: disgust,NOT SURE IF TRUMP IS JUST HAVING A REALLY BAD WEEK OR IF HE'S REALLY JUST A MENTAL CASE,sad,"bad, mental",10.53,,negative
+92,Unknown : neutral,unknown: disgust,"HAS 1 MILLION DOLLAR HOLE IN ONE PRIZE  AT CHARITY GOLF OUTING. WON'T PAY WINNINGS DUE TO CARNY TYPES RULES, PAYS LEGAL SETTLEMENT OUT OF TRUMP FOUNDATION.",, ,0,,negative
+94,Hillary Clinton : happy,"Hilary Clinton: angry, unknown : none","WHAT IF I TOLD YOU TRUMP HAS BEEN WORKING FOR ME THIS WHOLE TIME AND PEOPLE FELL FOR THE HOOK, LINE AND SINKER.",surprise,what if I told you ,4.35,,positive
+95,Unknown : happy,unknown: happy,MELANIA TRUMP GIVES ONE SPEECH AND SUDDENLY HILLARY VOTERS CARE ABOUT ETHICS AND STANDARDS,surprise,"suddenly ,ETHICS, STANDARDS",21.43,,negative
+97,Unknown : happy,unknown: angry,ADVOCATES AND FIGHTS AGAINST THE CENSORSHIP IN /R/NEWS CENSORS EVERY DISSENTING OPINION ON /R/ THE_DONALD,," CENSORSHIP, DISSENTING",13.33,,negative
+98,unknown : angry,"unknown: disgust, unknown : none",ALL REMAINING SUBS WILL BOW TO THE ADMINS AND WILL REMEMBER THIS AS THE LAST DAY OF /R/THE_DONALD,sad,"bow, last ",11.11,,negative
+102,"Barack Obama : angry, Barack Obama : neutral","Barack Obama: None, Barack Obama: disgust","BARACK OBAMA: SPENDS 8 YEARS WHINING ABOUT ""INHERITING BAD ECONOMY""... TELLS TRUMP TO ""STOP WHINING""",disgust,whining ,6.67,sarcasm,negative
+103,unknown : angry,unknown: None,"THE WAY TRUMP SPEAKS ABOUT WOMEN, IS DISGUSTING, IT SOUNDS MUCH BETTER WHEN RAPPED BY MY FRIEND JAYZ, THE EX CRACK DEALER",disgust,"DISGUTING, RAPPED",9.09,sarcasm,negative
+104,Unknown : sad,unknown : none,TRUMP IS GONNA MAKE ME WORK FOR MY BENEFITS,happy,benefits ,11.11,,negative
+106,Unknown : happy,unknown: angry,I NEED FEMINISM TO STOP PRIVILEGED WHITE MEN INCESSANT NAGGING HELPS TRUMP CAMPAIGN,disgust,"incessant, nagging, FEMINISM",23.08,sarcasm,negative
+107,Unknown : happy,unknown : none,WANTED TRUMP FOR PRESIDENT TRUMP KICKED HIM OUT AS FIRST ACTION,sad,kicked ,9.09,sarcasm,negative
+108,Unknown : happy,unknown: happy,TRUMP WILL NOT CONCEDE ON ELECTION NIGHT I GUARANTEE IT,sad,concede ,10,,negative
+109,Unknown : happy,unknown: angry,"IF YOU'RE POOR AND VOTING FOR TRUMP INSTEAD OF SANDERS, YOU'RE ALSO AN IDIOT. I'M VOTING FOR HILARY",sad,"poor, idiot ",11.11,sarcasm,negative
+110,"Hillary Clinton : happy, Donald Trump : happy","Hilary Clinton: disgust, Donald Trump: disgust",IT AMAZES ME HOW SOME PEOPLE BELIEVE EVERY LIE THEY HEAR ABOUT TRUMP... THEY REFUSE TO BELIEVE THE TRUTH ABOUT HILARY,sad,"amazes, LIE, TRUTH",14.29,,negative
+111,Unknown : disgust,unknown: disgust,"OH FUCK, WE GET IT TRMP SAID SOMETHING STUPID",disgust,"FUCK, STUPID",22.22,,negative
+112,Unknown : happy,unknown: neutral,THIS WILL BE THE SCANDAL THAT'LL STOP CROOKED HILLARY'S CAMPAIGN DEAD IN ITS TRACKS SAYS TRUMP SUPPORTER FOR THE FORTIETH TIME THIS MONTH,angry,"crooked ,SCANDAL",8.7,sarcasm,negative
+113,Unknown : happy,"unknown : none, unknown : none, unknown : none","I'M GONNA HOP ON THE TRUMP TRAIN. BOY, WHAT AN EXPERIENCE",happy,"hop, experience",18.18,,negative
+114,unknown : angry,unknown: happy,STONE COLD FOR PRESIDENT. STILL A BETTER CHOICE THAN TRUMP OR CLINTON,happy,better choice ,8.33,sarcasm,negative
+116,Unknown : disgust,unknown : none,AFTER WATCHING THE REPUBLICAN NATIONAL CONVENTION I THINK I MIGHT HAVE TO VOTE FOR HILLARY CLINTON. I DIDN'T REALIZE DONALD TRUMP WAS MARRIED TO A MUSLIM,sad,might ,3.85,sarcasm,negative
+117,Unknown : neutral,Rajnikant: None,"WHAT IF I TOLD YOU HILLARY AND TRUMP ARE BOTH SHIT, AND THE STATES ARE FUCKED EITHER WAY",angry,"shit, fucked",11.11,sarcasm,negative
+120,unknown : disgust,unknown: angry,TRUMP IS EVIL. TRUMP IS WHITE,disgust,evil,16.67,sarcasm,negative
+121,unknown : neutral,unknown : none,KEY INDIVIUALS IN CLINTON INVESTIGATIONS MYSTERIOUSLY DIE AND NOBODY PANICS. TRUMP MAKED A VEILED THREAT AGAINST HER AND EVERYONE LOSES THEIR MINDS!!,disgust,"mysteriously, veiled ,INVESTIGATIONS, DIE, PANICS, THREAT",27.27,sarcasm,negative
+122,Bad Luck Brian : happy,"Bad Luck Brian: happy, : None",FORGETS ELECTION DAY. TRUMP WINS BY ONE VOTE,sad,"forget, wins ",25,sarcasm,positive
+123,Unknown : sad,unknown : none,MY FINGER IS EXHAUSTED FROM DOWNVOTING ALL THE /R/THE_DONALD SHITPOSTS,sad,"exhasted ,DOWNVOTING",20,,negative
+124,"Unknown : neutral, unknown : neutral, Donald Trump : happy",Yogi Adityanath: angry,DONALD TRUMP CLAIMS HE'S BEEN CALLED A GENIUS BY WHO? A MIRROR,neutral," GENIUS, MIRROR",16.67,sarcasm,negative
+126,Bad Luck Brian : happy,Bad Luck Brian: happy,TRUMP SUPPORTERS HATE ME BECAUSE I LIKE BERNIE. BERNIE SUPPORTERS HATE ME BECAUSE I LIKE TRUMP,sad,hate,6.25,,negative
+127,Unknown : neutral,unknown: disgust,TRUMP SUPPORTERS BE LIKE: WHEN TRUMP WINS THIS MUSLIM ISIS SCUM WILL BE DEPORTED!,sad,"scum, deported ,ISIS",21.43,,negative
+128,Donald Trump : angry,Donald Trump: disgust,TRUMP'S FACE LOOKS LIKE AN ACCIDENT AT THE ANUS BLEACHING SALON,sad,"tragic, accident",18.18,sarcasm,negative
+130,"Donald Trump : happy, Unknown : surprise","Donald Trump: happy, unknown: angry",DONALD TRUMP DOES HAVE BLACK FRIENDS,surprise,"does, black ,FRIENDS",50,sarcasm,positive
+131,unknown: neutral,unknown : none,"RUSSIAN HACKERS ILLEGALLY HACK HILLARY CLINTION'S EMAILS AND TRUMP CAMPAIGN DOES NOT BAT AN EYE. NEW YORK TIMES ""ILLEGALLY"" RECEIVES AN ANONYMOUS 1995 TRUMP TAX RETURN AND THE TRUMP CAMPAIGN LOSES THEIR MINDS",disgust,"illegaly, HACK",6.06,sarcasm,negative
+132,Unknown : happy,unknown: happy,WHY THE HELL ISN'T THE TRUMP AMA BEING CALLED THE TRUMP AMS(ASK ME SOMETHING) IF IT IS HOSTED ON A MODDED SUBFORUM (R/THE_DONALD),angry,"hell, MODDED ,SUBFORM",13.04,,negative
+133,unknown : happy,unknown: happy,"SO YOU LIBS AND MEDIA FOOS ARE UPSET BECAUSE TRUMP SAID BAD WORDS, BUT YOU'RE OK WITH ADULT MEN USING THE LADIES ROOM WITH YOUR WIVES AND DAUGHTERS? THAT'S A SPECIAL KIND OF STUPID",disgust,"special kind, UPSET, BAD WORDS, STUPID",11.76,sarcasm,negative
+134,Unknown : happy,unknown: angry,THE SECOND AMENDMENT IS TO FIGHT GOVERNMENT TYRANNY? YOU AMMOSEXUALS ARE SO PARANOID. THAT COULD NEVER HAPPEN. DONALD TRUMP IS LITERALLY HITLER,angry,"neverFIGHT, TYRANNY, PARANOID, HITLER",18.18,,negative
+135,Donald Trump : angry,Donald Trump: disgust,LET'S GRAB TRUMP WHERE IT WILL HURT THE  MOST... BY THE VOTES,angry,"grab, hurt,votes",25,sarcasm,negative
+137,Unknown : happy,unknown: happy,AM I THE ONLY ONE AROUND HERE WHO THINK DONALD TRUMP KINDA SOUNDS LIKE JOE PESCI,sad,only one ,6.25,sarcasm,positive
+138,unknown: neutral,unknown : none,BERNIE SANDERS IS SUPPORTED WHEN HE CLAIMS THE ELECTION IS RIGGED AGAINST HIM - NOBODY BLINKS AN EYE. DONALD TRUM SAYS THE SAME THING AND EVERYONE LOSES THEIR MINDS,disgust,"loses ,RIGGED",6.9,,negative
+139,"Donald Trump : happy, unknown : happy","Donald Trump: None, unknown: disgust",PERHAPS I'LL BE DATING HER IN 14 YEARS,happy,"perhaps, happy ,DATING",37.5,sarcasm,negative
+140,Donald Trump : sad,Donald Trump: None,TRUMP: HILLARY WILL BE ELECTED PRESIDENT OVER MY DEAD BODY. AMERICA: YOU ALWAYS DID MAKE GREAT DEALS DONALD. WE ACCEPT.,happy,"great, accept, DEAD BODY, DEALS",20,sarcasm,positive
+141,Donald Trump : happy,Donald Trump: angry,WANT A TRUMP STEAK TO GO WITH YOUR TRUMP WHINE?,," STEAK, WHINE",20,sarcasm,negative
+142,unknown : disgust,unknown : none,"YEAH, IF YOU COULD GO AHEAD AND ACKNOWLEDGE THAT YOU WON'T BE THE NOMINEE AND HELP THE COUNTRY AVOID A TRUMP PRESIDENCY THAT WOULD BE GREAT",neutral," NOMINEE, BURNS DOWN",7.69,sarcasm,negative
+143,Donald Trump : neutral,Donald Trump: disgust,"I am SOOOO Confused..... If Trump is the Hate-Mongering Candidate, Why Aren't HIS Supporters Murdering Cops And Innocent People?",disgust,"mongering, murdering ",10.53,,positive
+144,unknown : happy,unknown: happy,DUMBASS DONALD NEWHOUSE:OWNS REDDIT DESTROYING REDDIT,, ,0,,
+145,Unknown : neutral,unknown : none,"CAPTAIN, IF A VOTE FOR HILLARY IS A VOTE FOR TRUMP, AND A VOTE FOR TRUMP IS A VOTE FOR HILLARY THE ONLY LOGICAL SOLUTION IS TO VOTE FOR GARY JOHNSON",neutral,"logical ,VOTE",6.45,pun,negative
+148,Donald Trump : happy,Donald Trump: None,SUPPORT LIBERALISM! SUPPORT THE IRANIAN PEACE DEAL BAN ASSAULT WEAPONS TAX THE 1% FEDERALLY FUND PLANNED PARENTHOOD TRUMP 2016!,," LIBERALISM, PEACE, WEAPONS",15.79,,positive
+149,Donald Trump : neutral,Donald Trump: disgust,TRUMP SAYS ILLEGAL ALIENS ARE TREATED BETTER THAN VETERANS IN THE U.S. SHARE IF YOU AGREE THIS IS WRONG!,," ALIENS, VETERANS",10.53,,negative 
+150,Barack Obama : sad,Barack Obama: None,"A POST THAT ISN'T FROM R/THE_DONALD FUCK IT, HAVE AN UPVOTE",, UPVOTE,9.09,,negative 
+151,Unknown : happy,unknown: happy,TELL ME AGAIN HOW MEGYN KELLY IS A HELPLESS VICTIM TO DONALD TRUMPS MYSOGYNY AND NEEDS ARE SYMPATHY,neutral," VICTIM, SYMPATHY",11.11,,
+152,Unknown : neutral,unknown: disgust,"OH, YOU'RE VOTING FOR THE GREEN PARTY CANDIDATE YOU KNOW YOU'RE ACTUALLY VOTING FOR TRUMP",neutral, ,0,,Neutral 
+153,unknown: None,unknown : none,WHEN DONALD TRUMP SAYS HILLARY CLINTON HAS BEEN FIGHTING ISIS HER ENTIRE LIFE,angry," FIGHTING, ISIS",15.38,,Negative 
+154,Unknown : happy,unknown: happy,SO TRUMP SAID AN AMERICAN JUDGE IS BIASED BECAUSE OF HIS MEXICAN HERITAGE TELL ME MORE HOW IS YOUR GUY TO CHOOSE SUPREME COURT JUDGES,angry," BIASED, MEXICAN HERITAGE",8,,Neutral
+155,unknown : None,unknown : none,"I'm a white, female, Christian, republican, pro-gun, pro-life feminist. How else can I offend you today? Oh yes, i'm also voting for Trump! ",angry, ,0,,
+156,Donald Trump : neutral,Donald Trump: angry,PREPARING FOR THE ONSLAUGHT OF IRONY AS THOUSANDS OF TRUMP SUPPORTERS WHO WANT A BAN OF MUSLIMS NOW EXPRESS GRIEF FOR MUHAMMAD ALI,disgust," IRONY, BAN, MUHAMMAD ALI",13.04,,Negative 
+157,unknown : sad,unknown: angry,"""Donald Trump's comments are the textbook definition of racisim"" STILL supports Donald Trump",angry, ,0,,Negative 
+158,unknown : happy,unknown: angry,I'M VOTING HILLARY BECAUSE TRUMP WILL RUN THIS COUNTRY AND WHAT HE WANTS DO WITH MUSLIMS IS ILLEGAL DOESN'T CARE ABOUT HILARY'S EMAIL SERVER,neutral," ILLEGAL, EMAIL SERVER",8.33,,
+159,unknown : fear,unknown: None,IF ALL YOU SELF RIGHTEOUS FOOLS THINK TRUMP'S LANGUAGE IS BAD WALK AROUND A MIDDLE SCHOOL CAMPUS AT LUNCH TIME,neutral," RIGHTEOUS, LANGUAGE",10,,Neutral
+160,unknown : None,unknown : none,OCTOBER 1980 POLLS:REGAN 39% CARTER 45% NOVEMBER 1980-REGAN WON IN A LANDSLIDE! DON'T BELIEVE THE POLLS! GO OUT AND VOTE TRUMP! ,angry," BELIEVE, POLLS",9.52,,Positive
+161,Unknown : happy,unknown: happy,"OH, YOU SAY YOU FEEL ""PRESECUTED"" AND ""SHUNNED"" FOR OPENLY SUPPORTING TRUMP AT YOUR UNIVERSITY? TELL ME AGAIN HOW THIS IS THE WORST OF OPPRESSION ANYONE HAS EVER FACED IN THIS COUNTRY",neutral," PRESECUTED, SHUNNED, OPPRESSION",9.38,,Neutral
+163,Bad Luck Brian : happy,Bad Luck Brian: happy,"BASKETBALL TEAM WINS CHAMPIONSHIP, BASEBALL TEAM IS LEADING IN THE AL CENTRAL WILL ALL BE OVERSHADOWED BY BEING THE HOST CITY TO THE THREE RING GOP CONVENTION AND THE NOMINATION OF DOALD TRUMP ",happy, ,0,,Neutral
+164,Donald Trump : happy,"unknown : none, unknown : none, unknown : none",THE BEST HISPANICS ARE MADE IN TRUMP TOWER GRILL I LOVE TACO BOWLS!,neutral, HISPANICS,7.69,,Positive
+165,unknown : fear,unknown: disgust,IF SANDERS LOOSES WHY NOT BE TRUMPS VP,angry, LOOSES,12.5,,Neutral
+166,Donald Trump : happy,"Donald Trump: angry, unknown : none, unknown : none",IF DONALD TRUMP WANTS THE BIGGEST WALL WE'LL BUILD A BIGGER SCAFFOLD,neutral, SCAFFOLD,8.33,,Neutral
+167,Unknown : happy,unknown: None,WHEN YOURE WRITING OUT THE DELEGATE VOTES TO READ YOUR STATE'S PLEDGES AT THE RNC AND YOU REALIZE TRUMP GOT THE MOST,angry, ,0,,Neutral
+168,Unknown : happy,unknown: happy,"SO YOU LIBS & MEDIA FOOLS ARE UPSET BECAUSE TRUMP SAID BAD WORDS, BUT YOU'RE OK WITH ADULT MEN USING THE LADIES ROOM WITH YOUR WIVES AND DAUGHTERS? THAT'S A SPECIAL KIND OF STUPID",angry," UPSET, BAD WORDS, STUPID",8.82,,Negative
+169,Little Sammy Griner : disgust,unkown: neutral,GOT BANNED FROM THE_DONALD FOR COMMENT IN TRUMP'S AMA,neutral, BANNED,11.11,,Neutral
+170,Unknown : happy,unknown: happy,"IF DONALD TRUMP GETS ELECTED, NOTHING YOU CAN DO FOLKS. ALTHOUGH THE SECOND AMENDMENT PEOPLE, MAYBE THERE IS. I DON'T KNOW. ",neutral, FOLKS,4.76,,Neutral
+171,Donald Trump : happy,Donald Trump: happy,"I don't care whether or not a person is gay. I judge people based on their capability, honesty and merit. Donald J Trump 2000",surprise, ,0,,Positive
+172,unknown : neutral,unknown: disgust,FREAKS OUT WHEN /R/ NEWS BANS USERS SUPPORTS TRUMP'S BAN OF WASHINGTON POST,neutral, BAN,7.69,,Negative
+173,Donald Trump : neutral,Donald Trump: angry,"IF YOU DISLIKE TRUMP, YOU SHOULD HELP VOTE HIM IN. THIS WAY, WE CAN CHANGE HIS PARTY FROM WITHIN. YES. HILLARY SUPPORTERS, THIS  IS HOW RIDICULOUS YOU SOUND.",neutral," DISLIKE, RIDICULOUS",7.14,,Neutral
+175,unknown : happy,unknown: happy,NORMALLY BJP CONGRESS DON'T GET UNITED BUT WHEN I SAY THEY DO.,happy, UNITED,8.33,,Neutral
+176,Rahul Gandhi : surprise,Rahul Gandhi: angry,AUR FIR NAA DRAGON BALLS ME SE DINOSAUR NIKLA ITNA BADA,neutral, ,0,,Positive
+177,Rahul Gandhi : neutral,Rahul Gandhi: happy,I don't know who you are But I'll find you and empower you!,neutral, ,0,,"Neutral
+"
+178,"unknown:happy, Narendra Modi : happy",unknown : none,BEEF KI BAAT KARENGE TOH HAMAARE PAAS KOI CHAARA NAHI BACHEGA,neutral, ,0,,
+179,"Narendra Modi : neutral, unknown : happy",unknown : none,"THANKS FOR THE INVITE, MARK CAN YOU ALSO HELP ME CHANGE MY DP?",happy," MARK, DP",15.38,,Negative
+180,Narendra Modi : happy,Narendra Modi: None,HAPPY BIRRTHDAY INDIAN PRIME MINISTER NARENDRA MODI FIRST POLITICAL LEADER WHO MADE THE YOUTH OF THIS COUNTRY TAKE INTEREST IN POLITICS,sad," YOUTH, INTEREST, POLITICS",14.29,,Positive
+181,unknown : neutral,unknown: angry,CLAIMS TO BE PRO LIFE *DIES*,neutral," PRO, DIES",33.33,,Neutral
+182,Arvind Kejriwal : angry,Arvind Kejriwal: angry,Brace Yourself Winter Is Coming.,neutral, ,0,,Neutral
+183,Rahul Gandhi : happy,Rahul Gandhi: happy,"I don't make public speeches very often But when I do, I make sure they are completely inappropriate.",neutral, ,0,,Negative
+184,Rahul Gandhi : happy,"Rahul Gandhi: happy, unknown : none",GOES TO GIVE AN INTERVIEW AFTER 10 YEARS ARNAB GOSWAMI,happy," INTERVIEW, ARNAB GOSWAMI",20,,Negative
+185,Arvind kejriwal : neutral,"Arvind Kejriwal: disgust, unknown : none",KEJRIWAL IS SO HONEST THAT HE ACTUALLY ROLLS ON THE FLOOR LAUGHING WHILE TEXTING 'ROFL',neutral, ROFL,6.67,,Neutral
+186,Rahul Gandhi :None,Rahul Gandhi: None,THE DALITS COW I MILKED TO WIN IN UTTAR PRADESH WAS A BULL,neutral, BULL,7.69,,Neutral
+187,Arvind Kejriwal : happy,Arvind Kejriwal: happy,"KEJRIWAL IS SO HONEST THAT NO WOMAN HAS EVER ASKED HIM ""DO I LOOK FAT""",-, HONEST,6.67,,Neutral
+188,"Narendra Modi : happy, unknown : neutral","Narendra Modi: angry, Arvind Kejriwal: None, unknown : none",TUM JHAADU LGAO,neutral, ,0,,
+189,"unknown : happy, Narendra Modi : happy","unknown: None, Narendra Modi: None",AND THEN I SAID ... GIRL MALNUTRITION IS DUE TO FIGURE CONSCIOUSNESS,neutral," MALNUTRITION, FIGURE CONSCIOUSNESS",16.67,,Neutral
+190,Arvind Kejriwal : sad,Arvind Kejriwal: disgust,Modi dares Kejriwal for the Ice Bucket Challenge AAP sees conspiracy to worsen Kejriwal's coughing,neutral, ,0,,Neutral
+191,unknown : surprise,unknown : none,WE SHOULD BUILD THE WALL AROUND DONALD TRUMP,, ,0,,Negative
+194,unknown : angry,Arvind Kejriwal: None,"DAD, I WANT TO BE AN ACTOR BETA, ITS PRONOUNCED DOCTOR",happy, ,0,,Neutral
+195,Rahul Gandhi : happy,Rahul Gandhi: happy,RAHUL GANDHI PRESSED AAP BUTTON ON EVM HOPING IT REFERRED TO HIM,neutral, EVM,8.33,,Neutral
+196,"Manmohan Singh : neutral, unknown : happy, Narendra Modi : neutral, Sonia Gandhi : neutral","Manmohan Singh: disgust, unknown: happy, Narendra Modi: disgust, Sonia Gandhi: disgust",INDIA IS BEING RUN ON TRIAL AND ERROR CONGRESS HAS ALREADY ERRED. BJP IS GOING TO BE ON TRIAL NOW!,-, TRIAL AND ERROR,5,,"Negative
+"
+197,Rahul Gandhi : neutral,unknown : none,NAHI! PEHLE MUJHE EK BOOMER DO! VARNA KATTI.,neutral, ,0,,
+198,Rahul Gandhi : happy,Rahul Gandhi: happy,"I don't make public speeches very often But when I do, I make sure they are completely inappropriate.
+",-, ,0,,Negative
+199," unknown:happy, Narendra Modi : happy",unknown : none,"""BEEF KI BAAT KARENGE TO HUMAARE PAAS KOI CHAARA NAHI RAHEGA""",neutral, ,0,,
+200,Rahul Gandhi : neutral,Rahul Gandhi: angry,#PAPPUSODUFFER HE IS A RESULT OF CONFUSED CHROMOSOMES COMBINED WITH VERY CONFUSED ITALIAN EGGS,neutral," CONFUSED CHROMOSOMES, CONFUSED ITALIAN EGGS",14.29,,Negative
+201,Barack Obama : sad,Barack Obama: None,MY TOAST GOT BURNT THIS MORNING THANKS OBAMA,neutral, BURNT,12.5,,Neutral
+202,Manmohan Singh : None,unknown : none,STILL A BETTER SPEAKER THAN RAHUL GANDHI,-, SPEAKER,14.29,,Negative
+204,Arvind Kejriwal : neutral,Arvind Kejriwal: happy,CLAIMED 100 SEATS DELIVERED IN BINARY!,neutral, BINARY,16.67,,
+205,Rahul Gandhi : neutral,Rahul Gandhi: disgust,I don't know who you are But I'll find you and empower you!,neutral, ,0,,Positive
+206,Arvind Kejriwal : happy,"Manmohan Singh: None, Arvind Kejriwal: None, Narendra Modi: happy, Arvind Kejriwal: happy, unknown: None","I DON'T CARE WHO YOU ARE, BUT I'LL FIND YOU, AND WILL CONTEST ELECTION AGAINST YOU",neutral, CONTEST ELECTION,6.25,,Neutral
+207,"Narendra Modi : neutral , unknown : happy","Narendra Modi: angry, unknown: happy",MODI TO MS DHONI: WORLD CUP LAAYE? MS DHONI TO MODI: ACCHE DIN AAYE?,neutral, ,0,,
+208,Yogi Adityanath : neutral,Yogi Adityanath: happy,"Yogi Adityanath keeps poll promise, waives off Rs.36359 cr of 2.15 crore farmers This is really appreciable.",neutral, ,0,,Positive
+209,Narendra Modi : neutral,Narendra Modi: None,SO YOU'RE HAVING DIFFICULTY IN CHANGING THE NOTES? JUST THINK HOW DIFFICULT IT IS FOR PM NARENDRA MODI TO CHANGE THE COUNTRY,neutral, ,0,,Neutral
+210,unknown : neutral,unknown: neutral,"I SPEAK TO PEOPLE IN THE LANGUAGE THEY UNDERSTAND. FIRST I HAVE A DIALOUGE, IF THIS IS NOT UNDERSTOOD I SPEAK IN ANOTHER LANGUAGE.",neutral, ,0,,Neutral
+211,Rahul Gandhi : angry,Rahul Gandhi: None,WE DON'T NEED MODI TO DEAL WITH PAKISTAN AND CHINA CHOTA BHEEM CAN DEFEAT THEM EASILY,neutral, CHOTA BHEEM,6.25,,Neutral
+212,Rahul Gandhi : neutral,Rahul Gandhi: happy,I don't know who you are But I'll find you and empower you!,neutral, ,0,,Positive
+213,unknown : happy,Manmohan Singh: happy,DON'T FORGET TO CASTE YOUR VOTE!,neutral, VOTE,16.67,,Positive
+214,unknown : happy,unknown: happy,NORMALLY BJP CONGRESS DO NOT GET UNITED BUT WHEN I SAY THEY DO.,neutral, UNITED,8.33,,
+215,Rahul Gandhi : None,Rahul Gandhi: None,THE DALITS COW I MILKED TO WIN IN UTTAR PRADESH WAS A BULL!,neutral, BULL,7.69,,
+216,unknown : angry,unknown: None,SUSHMA SWARAJ IS THE FIRST MARRIED INDIAN WOMEN WHO IS BEING CONGRATULATED FOR HAVING EXTERNAL AFFAIRS,," CONGRATULATED, AFFAIRS",12.5,,
