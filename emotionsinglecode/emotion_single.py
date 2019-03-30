@@ -9,6 +9,10 @@ from nltk.tokenize import RegexpTokenizer
 from collections import Counter
 import operator
 from textblob import TextBlob
+import os #oh
+#app = Flask(__name__)
+EMO_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
 
 #nltk.download('punkt')
 
@@ -19,8 +23,8 @@ stop_words = set(stopwords.words('english'))
 
 emo_results = []
 #import data
-emo_data  = pd.read_csv('/home/pranny/Desktop/BE Project/Flask/trial_flask (copy)/emotionsinglecode/Emotion.csv')
-main_data  = pd.read_csv('/home/pranny/Desktop/BE Project/Flask/trial_flask (copy)/emotionsinglecode/main_data.csv')
+emo_data  = pd.read_csv(os.path.join(EMO_FOLDER,"Emotion.csv"))
+main_data  = pd.read_csv(os.path.join(EMO_FOLDER,"main_data.csv"))
 #print(main_data)
 fear_words = emo_data['Fear words']
 happy_words = emo_data['Happy words']

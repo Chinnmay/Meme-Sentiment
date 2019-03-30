@@ -2,6 +2,8 @@ import sys
 import os
 import re
 import cv2 
+con_FOLDER = os.path.dirname(os.path.abspath(__file__))
+
 
 class MemeOCR:
     def __init__(self):
@@ -56,8 +58,11 @@ class MemeOCR:
         cv2.imwrite(self._tmp_image_fname, img)
 
     def _exec_tesseract(self):
-        cmd = 'tesseract -l joh %s %s > /dev/null' % (self._tmp_image_fname, self._tmp_txt_base)
+        #cmd = 'env TESSDATA_PREFIX='+con_FOLDER+'/tessdata tesseract -l joh %s %s > /dev/null' % (self._tmp_image_fname, self._tmp_txt_base)
+        #print('env TESSDATA_PREFIX='+con_FOLDER+'/tessdata tesseract -l joh %s %s > /dev/null' % (self._tmp_image_fname, self._tmp_txt_base))
         #cmd = 'env TESSDATA_PREFIX=/home/pranny/Desktop/BE Project/meme-sentiment-extraction/controllers/tessdata tesseract -l joh %s %s > /dev/null' % (self._tmp_image_fname, self._tmp_txt_base)
+        cmd = 'tesseract -l joh %s %s > /dev/null' % (self._tmp_image_fname, self._tmp_txt_base)
+        
         os.system(cmd)
 
     def _read_txt(self):

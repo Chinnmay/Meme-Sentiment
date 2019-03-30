@@ -11,7 +11,7 @@ from controllers import face_recognition_knn, overall_emotion
 import os #oh
 import jamspell
 import Crop_Faces
-from emotionsinglecode import emotion_single_new as emotion_single
+from emotionsinglecode import emotion_single as emotion_single
 import json
 from collections import Counter
 
@@ -63,7 +63,7 @@ def upload_file():
             content = content.replace(char , '')
 
         print("Content : ........." , content)
-
+        print("============" , file_path)
         output = Crop_Faces.cropfaces(file_path , "Face_cascade.xml")
         #print("Output==========" , output)
 
