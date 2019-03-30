@@ -7,11 +7,11 @@
 from flask import Flask, render_template ,url_for,request
 from werkzeug import secure_filename
 from controllers import memeocr
-from controllers import face_recognition_knn, overall_emotion
+from controllers import face_recognition_knn, overall_emotion, personality_score
 import os #oh
 import jamspell
 import Crop_Faces
-from emotionsinglecode import emotion_single as emotion_single
+from emotionsinglecode import emotion_single_new as emotion_single
 import json
 from collections import Counter
 
@@ -20,7 +20,6 @@ from collections import Counter
 app = Flask(__name__)
 APP_ROOT = os.path.dirname(os.path.abspath(__file__))
 UPLOAD_FOLDER = os.path.join(APP_ROOT, 'static/')
-print(UPLOAD_FOLDER)
 CONTROLLER_FOLDER = os.path.join(APP_ROOT, 'controllers/')
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.config['CONTROLLER_FOLDER'] = CONTROLLER_FOLDER
@@ -30,6 +29,16 @@ ocr = memeocr.MemeOCR()
 
 corrector = jamspell.TSpellCorrector()
 corrector.LoadLangModel('en.bin')
+
+
+def edit_output(output):
+    content = str(output)
+    b = "[]{}.\""
+    content = corrector.FixFragment(content)
+    for char in b:
+        content = content.replace(char , '')
+    return content
+
 
 @app.route('/')
 def home():
@@ -46,7 +55,6 @@ def upload_file():
         md_path = os.path.join(app.config['CONTROLLER_FOLDER'],"trained_knn_model.clf")
         #print("Model Path ........" , md_path)
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
-        print(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
         ext_text = ocr.recognize(UPLOAD_FOLDER + f.filename)
 
         file_content = str(ext_text).split(',')
@@ -62,8 +70,7 @@ def upload_file():
         for char in b:
             content = content.replace(char , '')
 
-        print("Content : ........." , content)
-        print("============" , file_path)
+
         output = Crop_Faces.cropfaces(file_path , "Face_cascade.xml")
         #print("Output==========" , output)
 
@@ -77,14 +84,15 @@ def upload_file():
 
         if(count == 0):
             for key,value in output[0].items():
-                print("============================" , key , value)
+                if len(key) == 0:
+                    continue
                 faces.append(key)
                 emotions.append({key : value})
 
-        print("Count :" , count)
         for i in range(0 , count):
             for key , value in output[i].items():
-                print(key , value)
+                if len(key) == 2:       #key is [].........trated as a string hence length 2
+                    continue
                 faces.append(key)
                 emotions.append({key : value})
 
@@ -99,7 +107,7 @@ def upload_file():
         textemoname = json.dumps(textemoname)
 
         textemonames = {"Emotion" : textemoname}
-        print(textemoname)
+
 
         overall_sentiment = []
         count = 0
@@ -112,7 +120,6 @@ def upload_file():
         overall_sentiment_score = []
         if overall_sentiment:
             overall_sentiment.sort()
-            print(overall_sentiment)
 
             length = len(overall_sentiment)
             try:
@@ -120,22 +127,19 @@ def upload_file():
             except:
                 negative_occurences = 0
             overall_sentiment_score.append(negative_occurences)
-            print(negative_occurences)
             try:
                 positive_occurences = length - overall_sentiment.index('positive')
             except:
                  positive_occurences = 0
-            print(positive_occurences)
             overall_sentiment_score.append(positive_occurences)
 
             neutral_occurences = length - positive_occurences - negative_occurences
             if(neutral_occurences < 0):
                 neutral_occurences = 0
-            print(neutral_occurences)
             overall_sentiment_score.append(neutral_occurences)
 
             most_common,num_most_common = Counter(overall_sentiment).most_common(1)[0]
-            print("max = " , most_common , " num = " , num_most_common)
+
     #overall_sentiment = overall_emotion.overall_sentiment(emotions[0][faces[0]] , stronger_emotion)
         #print("Overall Emotions=========="  , overall_sentiment)
     #textsentiment = (textsentiment.drop(textsentiment.index[-1]))
@@ -146,7 +150,19 @@ def upload_file():
         #emotions = emotionDetect.predict(f.filename)
         #print(emotions)
 
-    return render_template('module.html', strongest_overall_emotion = most_common,text_emotion_len = text_emotion_len, overall_sentiment = overall_sentiment_score ,faces = faces , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
+    face_with_tag = []
+
+    for face in faces:
+        tag = personality_score.check(face)
+        if tag == "":
+            face_with_tag.append(face)
+        else:
+            face_with_tag.append({face : tag})
+
+    face_with_tag = edit_output(face_with_tag)
+    emotions = edit_output(emotions)
+
+    return render_template('module.html', strongest_overall_emotion = most_common,text_emotion_len = text_emotion_len, overall_sentiment = overall_sentiment_score ,faces = face_with_tag , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
 
 
 

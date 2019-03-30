@@ -58,7 +58,7 @@ def cropfaces(imagePath , cascPath):
     image = cv2.imread(imagePath)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-    
+
     faces = faceCascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
@@ -90,7 +90,6 @@ def cropfaces(imagePath , cascPath):
         if not person:
             person = "Not Found"
 
-        print("------" , person , " : " , emotion)
 
         hashmap = {person : emotion}
         finaloutput.append(hashmap)
@@ -105,9 +104,7 @@ def cropfaces(imagePath , cascPath):
 
     for i in range(5,count):
         files = "image"+str(i)+".png"
-        #print(files)
         person = ((face_recognition_knn.get_faces(files , "controllers/trained_knn_model.clf")))
-        print("Person.......... " , person)
         if not person:
             count = count - 1
             continue
