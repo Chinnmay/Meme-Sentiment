@@ -139,7 +139,7 @@ def predict(X_img_path, knn_clf=None, model_path=None, distance_threshold=0.6):
     try:
         X_img = face_recognition.load_image_file(X_img_path)
     except:
-        return    
+        return
     X_face_locations = face_recognition.face_locations(X_img)
 
     # If no faces are found in the image, return an empty result.
@@ -196,7 +196,7 @@ def get_faces(full_file_path , md_path):
         for name, (top, right, bottom, left) in predictions:
             result.append(name)
     except:
-        return	    
+        return
         #print("- Found {} at ({}, {})".format(name, left, top))
     #print(result)
     return str(result)

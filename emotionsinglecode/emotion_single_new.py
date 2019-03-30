@@ -10,7 +10,6 @@ from collections import Counter
 import operator
 from textblob import TextBlob
 
-#nltk.download('punkt')
 
 
 tokenizer = RegexpTokenizer(r'\w+')
@@ -130,6 +129,7 @@ def negation(emotion, sent, senten, index):
 
 #for sent in main_data['Text on image (Manual)']:
 
+
 def main_func(sent):
 #sent = input("enter sentence:")
 	stronger_emotion = ""
@@ -229,18 +229,11 @@ def main_func(sent):
 		i += 1
 		#print(counts)
 		try:
-		    stronger_emotion = (max(counts.items(), key=operator.itemgetter(1))[0])
+			stronger_emotion = max(counts.items(), key=operator.itemgetter(1))[0]
 		except:
-			return [],[],[]
-
-		print("Stronger Emotion = " , stronger_emotion)
-
-	
+			print(count)	
 	emo_name = list(counts.keys())
 	emo_val = list(counts.values())
-	#print("Emotion Values = ===========" , emo_val , emo_name)
-
-
 	series = pd.Series(emo_val, index=emo_name)
 	#print(series)
 	if(sentiment>0.50):
@@ -256,11 +249,10 @@ def main_func(sent):
 	else:
 		print("error")
 
-
 	return emo_val, emo_name , stronger_emotion
 
-	plt.pie(emo_val, labels = emo_name, autopct ='% 1.1f %%', shadow = True)
-	plt.show()
+	#plt.pie(emo_val, labels = emo_name, autopct ='% 1.1f %%', shadow = True)
+	#plt.show()
 #series.plot.pie(figsize=(6, 6))
 
 #print(emo_results)

@@ -11,8 +11,9 @@ from controllers import face_recognition_knn, overall_emotion
 import os #oh
 import jamspell
 import Crop_Faces
-from emotionsinglecode import emotion_single
+from emotionsinglecode import emotion_single_new as emotion_single
 import json
+from collections import Counter
 
 
 
@@ -32,7 +33,7 @@ corrector.LoadLangModel('en.bin')
 
 @app.route('/')
 def home():
-	return render_template('module.html')
+    return render_template('module.html')
 
 @app.route('/', methods=['GET','POST'])
 
@@ -73,6 +74,13 @@ def upload_file():
         emotions = []
         if(count == ""):
             count = 0
+
+        if(count == 0):
+            for key,value in output[0].items():
+                print("============================" , key , value)
+                faces.append(key)
+                emotions.append({key : value})
+
         print("Count :" , count)
         for i in range(0 , count):
             for key , value in output[i].items():
@@ -83,9 +91,9 @@ def upload_file():
 
         #faces = face_recognition_knn.get_faces(file_path,md_path)
         textemoval , textemoname , stronger_emotion = emotion_single.main_func(content)
-        print("=================================")
+        #print("=================================")
         # print(textemoval)
-		#
+    #
         # print(stronger_emotion)
         text_emotion_len = len(textemoval)
         textemoname = json.dumps(textemoname)
@@ -93,18 +101,52 @@ def upload_file():
         textemonames = {"Emotion" : textemoname}
         print(textemoname)
 
+        overall_sentiment = []
+        count = 0
+        for i in emotions:
+            overall = (overall_emotion.overall_sentiment(i[faces[count]] , stronger_emotion))
+            if(overall != 'no_Emotion'):
+                overall_sentiment.append(overall)
+            count = count + 1
+        most_common = ""
+        overall_sentiment_score = []
+        if overall_sentiment:
+            overall_sentiment.sort()
+            print(overall_sentiment)
 
-        overall_sentiment = overall_emotion.overall_sentiment(emotions[0][faces[0]] , stronger_emotion)
-        print("Overall Emotions=========="  , overall_sentiment)
-		#textsentiment = (textsentiment.drop(textsentiment.index[-1]))
-		#print(faces)
+            length = len(overall_sentiment)
+            try:
+                negative_occurences = length - overall_sentiment[::-1].index('negative')
+            except:
+                negative_occurences = 0
+            overall_sentiment_score.append(negative_occurences)
+            print(negative_occurences)
+            try:
+                positive_occurences = length - overall_sentiment.index('positive')
+            except:
+                 positive_occurences = 0
+            print(positive_occurences)
+            overall_sentiment_score.append(positive_occurences)
+
+            neutral_occurences = length - positive_occurences - negative_occurences
+            if(neutral_occurences < 0):
+                neutral_occurences = 0
+            print(neutral_occurences)
+            overall_sentiment_score.append(neutral_occurences)
+
+            most_common,num_most_common = Counter(overall_sentiment).most_common(1)[0]
+            print("max = " , most_common , " num = " , num_most_common)
+    #overall_sentiment = overall_emotion.overall_sentiment(emotions[0][faces[0]] , stronger_emotion)
+        #print("Overall Emotions=========="  , overall_sentiment)
+    #textsentiment = (textsentiment.drop(textsentiment.index[-1]))
+    #print(faces)
         #resultdict['faces'] = faces
         #emotions = emotionDetect.predict(UPLOAD_FOLDER + f.filename)
         #f.save(secure_filename(f.filename))
         #emotions = emotionDetect.predict(f.filename)
         #print(emotions)
 
-    return render_template('module.html', text_emotion_len = text_emotion_len, overall_sentiment = overall_sentiment ,faces = faces , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
+    return render_template('module.html', strongest_overall_emotion = most_common,text_emotion_len = text_emotion_len, overall_sentiment = overall_sentiment_score ,faces = faces , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
 
 
 

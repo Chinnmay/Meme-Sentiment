@@ -50,15 +50,15 @@ import emotionDetect
 from controllers import face_recognition_knn
 
 
-    
+
 def cropfaces(imagePath , cascPath):
-    
+
     faceCascade = cv2.CascadeClassifier(cascPath)
 
     image = cv2.imread(imagePath)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-	
+
     faces = faceCascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
@@ -69,71 +69,72 @@ def cropfaces(imagePath , cascPath):
 
 
     count = 5
-    emotionfile = []	
+    emotionfile = []
     hashmap = {}
     finaloutput = []
     for (x, y, w, h) in faces:
         #cv2.rectangle(image, (x, y), (x+w, y+h), (0, 255, 0), 2)
         #print(str(x) + " " + str(y) + " " +str(w) + " " + str(h))
-        cropped = image[y-15:y+h+15 , x-15:x+w+15]
+        cropped = image[y-20:y+h+20 , x-20:x+w+20]
         #cv2.imshow("Cropped" , cropped)
         filename = "image"+str(count)+".png"
         count = count + 1
         cv2.imwrite(filename , cropped)
-    
+
     if(count == 5):
         #print("-----------------Direct model Called------------")
         person = ((face_recognition_knn.get_faces(imagePath , "controllers/trained_knn_model.clf")))
         #emotionfile.append(imagePath)
-        emotion = (emotionDetect.predict(imagePath))    
-        
+        emotion = (emotionDetect.predict(imagePath))
+
         if not person:
             person = "Not Found"
-        
-        print("Person..........CNT " , person)
-        
+
+        print("------" , person , " : " , emotion)
+
         hashmap = {person : emotion}
         finaloutput.append(hashmap)
-        
+
         hashmap = {"count" : count - 5}
-        
+        finaloutput.append(hashmap)
         #for key,value in finaloutput[0].items():
             #print(key , value + "\n")
         #print(finaloutput[0])
         return finaloutput
-    
-    	
+
+
     for i in range(5,count):
         files = "image"+str(i)+".png"
         #print(files)
         person = ((face_recognition_knn.get_faces(files , "controllers/trained_knn_model.clf")))
         print("Person.......... " , person)
         if not person:
+            count = count - 1
             continue
         #emotionfile = []
         #emotionfile.append(files)
         emotion = (emotionDetect.predict(files))
         hashmap = {person : emotion}
         finaloutput.append(hashmap)
-	
+
 	#kvn
     hashmap = {"count" : count - 5}
     finaloutput.append(hashmap)
     #print(finaloutput[-1])
     #print(finaloutput)
-    return finaloutput	
+    return finaloutput
 
 
 '''
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
     print("skjfd")
 
     faceCascade = cv2.CascadeClassifier(cascPath)
@@ -141,7 +142,7 @@ def cropfaces(imagePath , cascPath):
     image = cv2.imread(imagePath)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-	
+
     faces = faceCascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
@@ -152,7 +153,7 @@ def cropfaces(imagePath , cascPath):
 
 
     count = 5
-    emotionfile = []	
+    emotionfile = []
     hashmap = {}
     finaloutput = []
     for (x, y, w, h) in faces:
@@ -163,21 +164,21 @@ def cropfaces(imagePath , cascPath):
         filename = "image"+str(count)+".png"
         count = count + 1
         cv2.imwrite(filename , cropped)
-    
+
     if(count == 5):
         person = ((face_recognition_knn.predict(imagePath , model_path="controllers/trained_knn_model.clf")))
         #emotionfile.append(imagePath)
-        emotion = (emotionDetect.predict(imagePath))    
-        
+        emotion = (emotionDetect.predict(imagePath))
+
         if not person:
             person = "Not Found"
-        
+
         hashmap = {person[0] : emotion}
         finaloutput.append(hashmap)
         #print(finaloutput)
         return finaloutput
-    
-    	
+
+
     for i in range(5,count):
         files = "image"+str(i)+".png"
         #print(files)
@@ -189,11 +190,11 @@ def cropfaces(imagePath , cascPath):
         emotion = (emotionDetect.predict(files))
         hashmap = {person[0] : emotion}
         finaloutput.append(hashmap)
-	
+
 	#kvn
 
-    #print(finaloutput)	
-    return finaloutput	
+    #print(finaloutput)
+    return finaloutput
 #cropfaces("2560.jpg" , "Face_cascade.xml")
 
 

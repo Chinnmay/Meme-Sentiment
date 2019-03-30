@@ -1,5 +1,8 @@
 def overall_sentiment(face_emotion, text_emotion):
-	face_emotion = face_emotion[0]
+	try:
+	    face_emotion = face_emotion[0]
+	except:
+		return "no_Emotion"
 	print("Face Emotions=====" , face_emotion)
 	print("Text Emotions======" , text_emotion)
 	if(face_emotion=='happy' and text_emotion=='anger'):
@@ -65,5 +68,4 @@ def overall_sentiment(face_emotion, text_emotion):
 	elif(face_emotion=='none' and text_emotion=='surprise'):
 		return 'positive'
 	else:
-		return 'MULTIPLE EMOTIONS'
-print(overall_sentiment('x','y'))
+		return 'no_Emotion'

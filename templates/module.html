@@ -8,6 +8,73 @@
 
 
 <script type="text/javascript">
+
+    function ExploreOverallEmotion(overall_sentiment){
+      console.log(overall_sentiment);
+
+      var arr = []
+      var d = {}
+
+      var negative_occurences = overall_sentiment[0]
+      var positive_occurences = overall_sentiment[1]
+      var neutral_occurences = overall_sentiment[2]
+
+      var total = negative_occurences + positive_occurences + neutral_occurences
+
+      if(negative_occurences != 0){
+
+        d["y"] = (negative_occurences/total)*100
+        d["label"] = "Negative"
+        arr.push(d)
+        d = {}
+      }
+
+      if(positive_occurences != 0){
+        d["y"] = (positive_occurences/total)*100
+        d["label"] = "Positive"
+        arr.push(d)
+        d = {}
+      }
+
+      if(neutral_occurences != 0){
+
+        d["y"] = (neutral_occurences/total)*100
+        d["label"] = "Neutral"
+        arr.push(d)
+        d = {}
+
+      }
+
+      console.log(positive_occurences + " " + negative_occurences + " " + neutral_occurences);
+
+      var chart = new CanvasJS.Chart("chartContainer", {
+      	animationEnabled: true,
+      	title: {
+      		text: "Text Sentiment Gradient Score"
+      	},
+      	data: [{
+      		type: "pie",
+      		startAngle: 240,
+      		yValueFormatString: "##0.00\"%\"",
+      		indexLabel: "{label} {y}",
+
+          // showInLegend: true,
+          indexLabelPlacement: "inside",
+          indexLabelFontColor: "#FFFFFF",
+          indexLabelFontSize: 15,
+          indexLabelMaxWidth: 53,
+
+      		dataPoints:arr
+
+      	}]
+      });
+      chart.render();
+
+
+
+    }
+
+
     function ExploreText(textemoname){
       var len = {{text_emotion_len}}
       console.log(len);
@@ -119,10 +186,10 @@
         <td height="50"style="font-size: 170%;">{{ emotion }}</td>
         <td height="50"style="font-size: 170%;">
 
-          <!-- <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i></a>
-          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i></a> -->
-          <div class="text-center">
-          <button type="button" class="btn btn-info" >Explore</button></div>
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-up" style="float: left"></i></a>
+          <a href="#"><i onclick="myFunction(this)" class="fa fa-thumbs-down" style="float: right"></i></a>
+          <!-- <div class="text-center">
+          <button type="button" class="btn btn-info" >Explore</button></div> -->
         </td>
       </tr>
       <tr>
@@ -149,8 +216,16 @@
       </tr>
       <tr>
         <td height="50"style="font-size: 170%;">Overall Sentiment</td>
-        <td height="50"style="font-size: 170%;">{{overall_sentiment}}</td>
-        <td height="50"style="font-size: 170%;">---</td>
+        <td height="50"style="font-size: 170%;">{{strongest_overall_emotion}}</td>
+        <td height="50"style="font-size: 170%;">
+          <div class="text-center">
+          <!-- <button type="button" class="btn btn-info" onclick="ExploreText()">Explore</button></div> -->
+
+          <button  type="button" class="btn btn-info" onclick="ExploreOverallEmotion({{overall_sentiment}})">Explore</button></div>
+
+
+
+        </td>
       </tr>
     </tbody>
   </table>
