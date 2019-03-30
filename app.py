@@ -11,7 +11,7 @@ from controllers import face_recognition_knn, overall_emotion, personality_score
 import os #oh
 import jamspell
 import Crop_Faces
-from emotionsinglecode import emotion_single_new as emotion_single
+from emotionsinglecode import emotion_single as emotion_single
 import json
 from collections import Counter
 
