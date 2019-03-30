@@ -232,14 +232,16 @@ def main_func(sent):
 			print( "Could not detect any emotion" )
 		i += 1
 		#print(counts)
-		try:
-		    stronger_emotion = (max(counts.items(), key=operator.itemgetter(1))[0])
-		except:
-			return [],[],[]
+		
 
-		print("Stronger Emotion = " , stronger_emotion)
+		
 
-	
+	print(counts)
+	try:
+	    stronger_emotion = (max(counts.items(), key=operator.itemgetter(1))[0])
+	    print("Stronger Emotion ===>" , stronger_emotion)
+	except:
+		return [],[],[]
 	emo_name = list(counts.keys())
 	emo_val = list(counts.values())
 	#print("Emotion Values = ===========" , emo_val , emo_name)

@@ -58,7 +58,7 @@ def cropfaces(imagePath , cascPath):
     image = cv2.imread(imagePath)
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
-
+    
     faces = faceCascade.detectMultiScale(
         gray,
         scaleFactor=1.1,
