@@ -24,30 +24,30 @@ def checkParty(person1 , person2):
         if person1 in first_person:
             for second_person in party1:
                 if person2 in second_person:
-                    return True
-            return False
+                    return 1
+            return 0
 
 
     for first_person in party2:
         if person1 in first_person:
             for second_person in party2:
                 if person2 in second_person:
-                    return True
-            return False
+                    return 1
+            return 0
 
     for first_person in party3:
         if person1 in first_person:
             for second_person in party3:
                 if person2 in second_person:
-                    return True
-            return False
+                    return 1
+            return 0
 
     for first_person in party4:
         if person1 in first_person:
             for second_person in party4:
                 if person2 in second_person:
-                    return True
-            return False
+                    return 1
+            return 0
 
 if __name__ == "__main__":
     print(checkParty("modi" , "Thackrey"))

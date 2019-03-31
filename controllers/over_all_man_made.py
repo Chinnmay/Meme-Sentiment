@@ -1,4 +1,18 @@
 def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, same_party, face_sentiment, personality_status):
+
+	negative_list = ['sad' , 'disgust' , 'fear' , 'anger']
+	positive_list = ['happy' , 'surprise' , 'neutral']
+
+	if text_sentiment.lower() in negative_list:
+		text_sentiment = -1
+	elif text_sentiment.lower() in positive_list:
+		text_sentiment = 1
+
+	if face_sentiment[0].lower() in negative_list:
+		face_sentiment = -1
+	elif face_sentiment[0].lower() in positive_list:
+		face_sentiment = 1
+
 	print("who_is_talking", who_is_talking)
 	print("about_whom", about_whom)
 	print("about_who", about_who)
@@ -12,7 +26,7 @@ def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, sam
 		neutral/unknown 0
 	Text sentiment
 		positive 1
-		negative -1	
+		negative -1
 	who is talking
 		himself 1
 		third person 0
@@ -28,7 +42,7 @@ def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, sam
 		yes 1
 		no 0
     face sentiment
-    	positive 1 
+    	positive 1
     	negative -1
 
 	'''
@@ -119,4 +133,3 @@ def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, sam
 #face_sentiment = input("face_sentiment")
 #personality_status = input("personality_status")
 #print(overall_sentiment(int(who_is_talking), int(about_whom), int(about_who), int(text_sentiment), int(same_party), int(face_sentiment), int(personality_status)))
-

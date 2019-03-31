@@ -14,10 +14,12 @@ def who_is_talking(text , person):
 	for x in range(5):
 		print(words[x])
 		if words[x] == 'i':
-			return("person")
+			return(person , 1)
 		if words[x] == 'am':
-			return("person")	
-	
+			return(person , 1)
+		if words[x] == 'me':
+			return(person , 1)
+
 
 			'''for x in tagged_words:
 		for p in person:
@@ -29,7 +31,7 @@ def who_is_talking(text , person):
 	for x in tagged_words:
 		if(x[1] == 'PRP'):
 			print(x)'''
-	return("third_person")
+	return("third_person" , 0)
 	#stem_sentence=[]
 	##		stem_sentence.append(porter.stem(word))
 	##	stem_sentence.append(" ")
@@ -37,4 +39,3 @@ def who_is_talking(text , person):
 
 #sent = input("enter sentence:")
 #print(who_is_talking(sent , ['donald','trump']))
-

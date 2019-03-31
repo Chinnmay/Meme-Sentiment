@@ -1,5 +1,5 @@
 import pandas as pd
-personalities=pd.read_csv('personalities score.csv')
+personalities=pd.read_csv('./controllers/personality_score.csv')
 #print(personalities)
 positive_persons=personalities.iloc[:,0]
 neutral_persons=personalities.iloc[:,1]
@@ -52,6 +52,7 @@ def personabout(face_name,text):
 
 def gethimselforothers(face_name,text,whoistalking):
 #face_name: list of faces identified, text: text in image whoistalking: Chinmay's output(String)
+    whoistalking = whoistalking[0]
     persons=personabout(face_name,text)
 
     if(whoistalking in persons):
@@ -63,19 +64,23 @@ def gethimselforothers(face_name,text,whoistalking):
 
 def getgradientinothers(face_name,text):
     persons=personabout(face_name,text)
-    if(persons[0] in positive_persons):
+    name=persons[0].replace('[','')
+    name=name.replace(']','')
+    name=name.replace('\'','')
+    print(name)
+    if(name in positive_persons):
         return(1)
-    elif(persons[0] in negative_persons):
+    elif(name in negative_persons):
         return(-1)
-    elif(persons[0] in neutral_persons):
+    elif(name in neutral_persons):
         return(0)
     else:
         return(2)
-    
-    
-    
-    
+
+
+
+
 #for third person, last parameter 'third_person'
 #print(personabout(['Abdul Kalam'], "Claimed 100 seats delivered in binary",))
 #print(gethimselforothers(['Abdul Kalam'],"Claimed 100 seats delivered in binary",''))
-#print(getgradientinothers(['Abdul Kalam'],"Claimed 100 seats delivered in binary"))    
+#print(getgradientinothers(['Abdul Kalam'],"Claimed 100 seats delivered in binary"))

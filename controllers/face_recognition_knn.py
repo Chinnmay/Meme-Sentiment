@@ -201,7 +201,7 @@ def get_faces(full_file_path , md_path):
     #print(result)
     return str(result)
 
-'''
+
 if __name__ == "__main__":
     # STEP 1: Train the KNN classifier and save it to disk
     # Once the model is trained and saved, you can skip this step next time.
@@ -212,12 +212,12 @@ if __name__ == "__main__":
     # STEP 2: Using the trained classifier, make predictions for unknown images
 
 
-    full_file_path  = "PFx9BTX.jpg"
+    full_file_path  = "image5.png"
     predictions = predict(full_file_path, model_path="trained_knn_model.clf")
     for name, (top, right, bottom, left) in predictions:
             print("- Found {} at ({}, {})".format(name, left, top))
     #show_prediction_labels_on_image(full_file_path , predictions)
-
+'''
     ===================
     for image_file in os.listdir("knn_examples/test"):
         full_file_path = os.path.join("knn_examples/test", image_file)
