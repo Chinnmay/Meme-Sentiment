@@ -1,0 +1,40 @@
+import nltk
+#from nltk.stem import PorterStemmer
+#porter = PorterStemmer()
+
+def who_is_talking(text , person):
+	#sent = nltk.sent_tokenize(text)
+	#print(sent)
+	text = text.lower()
+	words = nltk.word_tokenize(text)
+	#print(words)
+	#text = text.lower()
+	tagged_words = nltk.pos_tag(words)
+	print(tagged_words)
+	for x in range(5):
+		print(words[x])
+		if words[x] == 'i':
+			return("person")
+		if words[x] == 'am':
+			return("person")	
+	
+
+			'''for x in tagged_words:
+		for p in person:
+			if x[0] == p:
+				print('person = ', person)
+		if(x[1] == 'PRP'):
+			print(x)
+	text = text.lower()
+	for x in tagged_words:
+		if(x[1] == 'PRP'):
+			print(x)'''
+	return("third_person")
+	#stem_sentence=[]
+	##		stem_sentence.append(porter.stem(word))
+	##	stem_sentence.append(" ")
+	#print(stem_sentence)
+
+#sent = input("enter sentence:")
+#print(who_is_talking(sent , ['donald','trump']))
+
