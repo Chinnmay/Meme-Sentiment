@@ -6,14 +6,14 @@
 
 from flask import Flask, render_template ,url_for,request
 from werkzeug import secure_filename
-from controllers import memeocr
-from controllers import face_recognition_knn, overall_emotion, personality_score
+
+from controllers import checkSameParty, memeocr,face_recognition_knn, overall_emotion, personality_score, whoistalking, svo, over_all_man_made
 import os #oh
 import jamspell
 import Crop_Faces
 from emotionsinglecode import emotion_single as emotion_single
-import json
 from collections import Counter
+import json
 
 
 
@@ -108,7 +108,7 @@ def upload_file():
 
         textemonames = {"Emotion" : textemoname}
 
-
+        '''
         overall_sentiment = []
         count = 0
         for i in emotions:
@@ -139,7 +139,7 @@ def upload_file():
             overall_sentiment_score.append(neutral_occurences)
 
             most_common,num_most_common = Counter(overall_sentiment).most_common(1)[0]
-
+        '''
     #overall_sentiment = overall_emotion.overall_sentiment(emotions[0][faces[0]] , stronger_emotion)
         #print("Overall Emotions=========="  , overall_sentiment)
     #textsentiment = (textsentiment.drop(textsentiment.index[-1]))
@@ -151,18 +151,59 @@ def upload_file():
         #print(emotions)
 
     face_with_tag = []
-
+    flag_for_tag = False
     for face in faces:
         tag = personality_score.check(face)
         if tag == "":
             face_with_tag.append(face)
         else:
+            flag_for_tag = True
             face_with_tag.append({face : tag})
 
+    face_for_overall = face_with_tag
     face_with_tag = edit_output(face_with_tag)
+    emotions_for_overall = emotions
     emotions = edit_output(emotions)
 
-    return render_template('module.html', strongest_overall_emotion = most_common,text_emotion_len = text_emotion_len, overall_sentiment = overall_sentiment_score ,faces = face_with_tag , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
+
+    print("Faces========================" , faces)
+
+    subject_output = []
+    person_talking = -1
+    about_who = -1
+    about_whom = -2
+
+    #if(len(faces) > 0):
+    subject_output , person_talking = whoistalking.who_is_talking(content , faces)
+    about_whom = svo.gethimselforothers(faces , content , subject_output)
+    about_who = svo.getgradientinothers(faces , content)
+
+
+    try:
+        if(len(faces) > 0):
+            issameParty = checkSameParty.checkParty(subject_output[0] , svo.personabout(faces , content)[0])
+    except:
+        print("Person Talking is Third Person.")
+        issameParty = 2
+
+    if(len(faces) > 0 and flag_for_tag == True):
+        print("\n------Overall called when Face Tagged")
+        status = face_for_overall[0][faces[0]]
+        if status == "Positive":
+            status = 1
+        elif status == "Negative":
+            status = -1
+        elif status == "Neutral":
+         status = 0
+        overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], status)
+    else:
+        overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], 0)
+
+
+    print("\n\n---------Overall Output------------\n" , overall_emotion_output)
+
+
+    return render_template('module.html', strongest_overall_emotion = overall_emotion_output,text_emotion_len = text_emotion_len, overall_sentiment = overall_emotion_output ,faces = face_with_tag , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
 
 
 
