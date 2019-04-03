@@ -7,7 +7,7 @@
 from flask import Flask, render_template ,url_for,request
 from werkzeug import secure_filename
 
-from controllers import checkSameParty, memeocr,face_recognition_knn, overall_emotion, personality_score, whoistalking, svo, over_all_man_made
+from controllers import extractTextExcel, checkSameParty, memeocr,face_recognition_knn, overall_emotion, personality_score, whoistalking, svo, over_all_man_made
 import os #oh
 import jamspell
 import Crop_Faces
@@ -54,8 +54,11 @@ def upload_file():
         file_path = os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename))
         md_path = os.path.join(app.config['CONTROLLER_FOLDER'],"trained_knn_model.clf")
         #print("Model Path ........" , md_path)
+
         f.save(os.path.join(app.config['UPLOAD_FOLDER'],secure_filename(f.filename)))
-        ext_text = ocr.recognize(UPLOAD_FOLDER + f.filename)
+        ext_text = extractTextExcel.getText(f.filename)
+        if(ext_text == ""):
+            ext_text = ocr.recognize(UPLOAD_FOLDER + f.filename)
 
         file_content = str(ext_text).split(',')
         content = "".join(file_content)
@@ -73,8 +76,6 @@ def upload_file():
 
         output = Crop_Faces.cropfaces(file_path , "Face_cascade.xml")
 
-        print("Output================" , output)
-
         count = output[-1]
         count = (count.get("count" , ""))
         output.pop()
@@ -87,7 +88,6 @@ def upload_file():
             for key,value in output[0].items():
                 if len(key) == 0 or len(key) == 2:
                     continue
-                print(key , "---------" , value)
                 faces.append(key)
                 if value is None:
                     value = "None"
@@ -100,7 +100,6 @@ def upload_file():
                     continue
                 if value is None:
                     value = "None"
-                print(key , "---------" , value)
                 faces.append(key)
                 emotions.append({key : value})
 
@@ -176,7 +175,6 @@ def upload_file():
     emotions_for_overall = emotions
     emotions = edit_output(emotions)
 
-    print("=======OVerall Emotions=======" , emotions_for_overall)
 
     subject_output = []
     person_talking = -1
@@ -195,13 +193,11 @@ def upload_file():
         else:
             issameParty = 2
     except:
-        print("Person Talking is Third Person.")
         issameParty = 2
 
 
 
     if(len(faces) > 0 and flag_for_tag == True):
-        print("\n------Overall called when Face Tagged")
         try:
             status = face_for_overall[0][faces[0]]
         except:
@@ -224,7 +220,6 @@ def upload_file():
         overall_emotion_output = "Negative"
     else:
         overall_emotion_output = "Neutral"
-    print("\n\n---------Overall Output------------\n" , overall_emotion_output)
 
     if face_with_tag == "":
         face_with_tag = "Could Not Detect"
