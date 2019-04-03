@@ -7,12 +7,14 @@ def who_is_talking(text , person):
 	#print(sent)
 	text = text.lower()
 	words = nltk.word_tokenize(text)
-	#print(words)
 	#text = text.lower()
 	tagged_words = nltk.pos_tag(words)
-	print(tagged_words)
-	for x in range(5):
-		print(words[x])
+	#print(tagged_words)
+	if(len(words)<5):
+		length = len(words)
+	else:
+		length = 5
+	for x in range(length):
 		if words[x] == 'i':
 			return(person , 1)
 		if words[x] == 'am':

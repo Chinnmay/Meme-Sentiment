@@ -67,7 +67,6 @@ def getgradientinothers(face_name,text):
     name=persons[0].replace('[','')
     name=name.replace(']','')
     name=name.replace('\'','')
-    print(name)
     if(name in positive_persons):
         return(1)
     elif(name in negative_persons):

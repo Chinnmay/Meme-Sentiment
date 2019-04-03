@@ -3,15 +3,23 @@ def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, sam
 	negative_list = ['sad' , 'disgust' , 'fear' , 'anger']
 	positive_list = ['happy' , 'surprise' , 'neutral']
 
-	if text_sentiment.lower() in negative_list:
-		text_sentiment = -1
-	elif text_sentiment.lower() in positive_list:
-		text_sentiment = 1
+	try:
+		if text_sentiment.lower() in negative_list:
+			text_sentiment = -1
+		elif text_sentiment.lower() in positive_list:
+			text_sentiment = 1
+	except:
+		text_sentiment = 0		
 
-	if face_sentiment[0].lower() in negative_list:
-		face_sentiment = -1
-	elif face_sentiment[0].lower() in positive_list:
-		face_sentiment = 1
+	try:
+		if face_sentiment[0].lower() in negative_list:
+			face_sentiment = -1
+		elif face_sentiment[0].lower() in positive_list:
+			face_sentiment = 1
+		else:
+			face_sentiment = 0
+	except:
+		face_sentiment = 0
 
 	print("who_is_talking", who_is_talking)
 	print("about_whom", about_whom)

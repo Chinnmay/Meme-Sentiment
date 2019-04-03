@@ -72,7 +72,8 @@ def upload_file():
 
 
         output = Crop_Faces.cropfaces(file_path , "Face_cascade.xml")
-        #print("Output==========" , output)
+
+        print("Output================" , output)
 
         count = output[-1]
         count = (count.get("count" , ""))
@@ -84,15 +85,22 @@ def upload_file():
 
         if(count == 0):
             for key,value in output[0].items():
-                if len(key) == 0:
+                if len(key) == 0 or len(key) == 2:
                     continue
+                print(key , "---------" , value)
                 faces.append(key)
+                if value is None:
+                    value = "None"
                 emotions.append({key : value})
 
         for i in range(0 , count):
             for key , value in output[i].items():
-                if len(key) == 2:       #key is [].........trated as a string hence length 2
+
+                if len(key) == 2:       #key is [].........treated as a string hence length 2
                     continue
+                if value is None:
+                    value = "None"
+                print(key , "---------" , value)
                 faces.append(key)
                 emotions.append({key : value})
 
@@ -153,7 +161,10 @@ def upload_file():
     face_with_tag = []
     flag_for_tag = False
     for face in faces:
-        tag = personality_score.check(face)
+        try:
+            tag = personality_score.check(face)
+        except:
+            tag = ""
         if tag == "":
             face_with_tag.append(face)
         else:
@@ -165,30 +176,36 @@ def upload_file():
     emotions_for_overall = emotions
     emotions = edit_output(emotions)
 
-
-    print("Faces========================" , faces)
+    print("=======OVerall Emotions=======" , emotions_for_overall)
 
     subject_output = []
     person_talking = -1
     about_who = -1
     about_whom = -2
 
-    #if(len(faces) > 0):
-    subject_output , person_talking = whoistalking.who_is_talking(content , faces)
-    about_whom = svo.gethimselforothers(faces , content , subject_output)
-    about_who = svo.getgradientinothers(faces , content)
+    if(len(faces) > 0):
+        subject_output , person_talking = whoistalking.who_is_talking(content , faces)
+        about_whom = svo.gethimselforothers(faces , content , subject_output)
+        about_who = svo.getgradientinothers(faces , content)
 
 
     try:
         if(len(faces) > 0):
             issameParty = checkSameParty.checkParty(subject_output[0] , svo.personabout(faces , content)[0])
+        else:
+            issameParty = 2
     except:
         print("Person Talking is Third Person.")
         issameParty = 2
 
+
+
     if(len(faces) > 0 and flag_for_tag == True):
         print("\n------Overall called when Face Tagged")
-        status = face_for_overall[0][faces[0]]
+        try:
+            status = face_for_overall[0][faces[0]]
+        except:
+            status = face_for_overall[1][faces[1]]
         if status == "Positive":
             status = 1
         elif status == "Negative":
@@ -197,11 +214,20 @@ def upload_file():
          status = 0
         overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], status)
     else:
-        overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], 0)
-
-
+        try:
+            overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], 0)
+        except:
+            overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, "", 0)
+    if overall_emotion_output == 1:
+        overall_emotion_output = "Positive"
+    elif overall_emotion_output == -1:
+        overall_emotion_output = "Negative"
+    else:
+        overall_emotion_output = "Neutral"
     print("\n\n---------Overall Output------------\n" , overall_emotion_output)
 
+    if face_with_tag == "":
+        face_with_tag = "Could Not Detect"
 
     return render_template('module.html', strongest_overall_emotion = overall_emotion_output,text_emotion_len = text_emotion_len, overall_sentiment = overall_emotion_output ,faces = face_with_tag , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
 

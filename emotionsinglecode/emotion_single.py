@@ -106,6 +106,12 @@ def negation(emotion, sent, senten, index):
 			v = -1
 		else :
 			v = 0
+	if find_neg(sent[index - 3]):
+		#print(sent[index - 2])
+		if v == 0:
+			v = -1
+		else :
+			v = 0
 
 	'''for i in range(index, 0, -1):
 		if sent[]
@@ -232,14 +238,12 @@ def main_func(sent):
 			print( "Could not detect any emotion" )
 		i += 1
 		#print(counts)
-		
 
-		
 
-	print(counts)
+
+
 	try:
 	    stronger_emotion = (max(counts.items(), key=operator.itemgetter(1))[0])
-	    print("Stronger Emotion ===>" , stronger_emotion)
 	except:
 		return [],[],[]
 	emo_name = list(counts.keys())
