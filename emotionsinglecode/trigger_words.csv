@@ -1,4 +1,12 @@
 anger,sadness,disgust,happy,surprise,fear,Negative words,Pos
+,leaving,,,,,,
+,dead,,,,,,
+,,,,,,,
+ridiculous,,,,,,,
+accuses,,,,,,,
+fuck,,,,,,,
+complaint,,,,,,,
+stupid,,,,,,,
 abhor,abandon,abhorr,accomplish,admir,affright,cannot,VB
 abhorr,abject,abhorrent,action,admiration,afraid,could not,VBD
 abhorrence,abrupt,abomin,activated,amaz,alarm,did not,VBG
@@ -67,7 +75,7 @@ bedevil,clinical depression,turn off,avidness,stupefi,fearfulness,,
 begrudg,compressed,vile,bang,stupefied,fearsom,,
 begrudge,compunct,wick,banter,stupefy,fearsome,,
 begrudging,compunction,wicked,barrack,stupefying,forebod,,
-belliger,confused,yucki,be on cloud nin,stupid,foreboding,,
+belliger,confused,yucki,be on cloud nin,,foreboding,,
 belligerence,consume,yucky,be on cloud nine,stupifi,fright,,
 belligerency,contemplative,,beam,stupify,frighten,,
 belligerent,contrit,,beaming,superbl,frighten away,,
