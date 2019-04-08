@@ -7,7 +7,7 @@
 from flask import Flask, render_template ,url_for,request
 from werkzeug import secure_filename
 
-from controllers import extractTextExcel, checkSameParty, memeocr,face_recognition_knn, overall_emotion, personality_score, whoistalking, svo, over_all_man_made
+from controllers import extractTextExcel, checkSameParty, memeocr,face_recognition_knn, overall_emotion, personality_score, whoistalking, svo, over_all_emotion
 import os #oh
 import jamspell
 import Crop_Faces
@@ -196,24 +196,28 @@ def upload_file():
         issameParty = 2
 
 
+    print(face_for_overall)
 
     if(len(faces) > 0 and flag_for_tag == True):
         try:
             status = face_for_overall[0][faces[0]]
         except:
-            status = face_for_overall[1][faces[1]]
+            try:
+                status = face_for_overall[1][faces[1]]
+            except:
+                status = face_for_overall[2][faces[2]]
         if status == "Positive":
             status = 1
         elif status == "Negative":
             status = -1
         elif status == "Neutral":
          status = 0
-        overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], status)
+        overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], status)
     else:
         try:
-            overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], 0)
+            overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], 0)
         except:
-            overall_emotion_output = over_all_man_made.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, "", 0)
+            overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, "", 0)
     if overall_emotion_output == 1:
         overall_emotion_output = "Positive"
     elif overall_emotion_output == -1:
@@ -222,7 +226,7 @@ def upload_file():
         overall_emotion_output = "Neutral"
 
     if face_with_tag == "":
-        face_with_tag = "Could Not Detect"
+        face_with_tag = ""
 
     return render_template('module.html', strongest_overall_emotion = overall_emotion_output,text_emotion_len = text_emotion_len, overall_sentiment = overall_emotion_output ,faces = face_with_tag , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
 
