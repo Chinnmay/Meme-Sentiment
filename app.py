@@ -1,4 +1,4 @@
-# // console.log(JSON.stringify(textemoval[0]))
+    # // console.log(JSON.stringify(textemoval[0]))
 #
 # //var textemoname = JSON.parse("{{textemoname}}")
 # //console.log(textemoname);
@@ -7,11 +7,11 @@
 from flask import Flask, render_template ,url_for,request
 from werkzeug import secure_filename
 
-from controllers import extractTextExcel, checkSameParty, memeocr,face_recognition_knn, overall_emotion, personality_score, whoistalking, svo, over_all_emotion
+from controllers import extractTextExcel, checkSameParty, memeocr,face_recognition_knn, overall_emotion, personality_score, whoistalking, svo, over_all_emotion,emotion_single
 import os #oh
 import jamspell
 import Crop_Faces
-from emotionsinglecode import emotion_single as emotion_single
+# from emotionsinglecode import emotion_single as emotion_single
 from collections import Counter
 import json
 
@@ -33,12 +33,23 @@ corrector.LoadLangModel('en.bin')
 
 def edit_output(output):
     content = str(output)
-    b = "[]{}.\""
+    b = "[]{}\"\'"
     content = corrector.FixFragment(content)
     for char in b:
         content = content.replace(char , '')
     return content
 
+
+def calculate_stronger(emoval,emo_name):
+    maximum = (max(emoval))
+
+    stronger_emotions = []
+
+    for i in range(len(emoval)):
+        if emoval[i] == maximum:
+            stronger_emotions.append(str(emo_name[i]) + " : " + str(round(emoval[i] , 2)) + "%")
+
+    return stronger_emotions
 
 @app.route('/')
 def home():
@@ -68,7 +79,7 @@ def upload_file():
         content = content.replace('$' , 'S')
         content = content.replace('()' , 'O')
         content = content.replace('1' , 'T')
-        b = "[]<()!@#$%^&*-_:{}.,''?/|\~`\""
+        b = "[]<()!@#$%^&*-_:{}.,'?/|\~`\""
         content = corrector.FixFragment(content)
         for char in b:
             content = content.replace(char , '')
@@ -105,7 +116,8 @@ def upload_file():
 
 
         #faces = face_recognition_knn.get_faces(file_path,md_path)
-        textemoval , textemoname , stronger_emotion = emotion_single.main_func(content)
+        textemoval , textemoname , stronger_emotion, text_sentiment = emotion_single.main_func(content)
+        stronger_emotion = edit_output(calculate_stronger(textemoval , textemoname))
         #print("=================================")
         # print(textemoval)
     #
@@ -196,7 +208,7 @@ def upload_file():
         issameParty = 2
 
 
-    print(face_for_overall)
+    # print(face_for_overall)
 
     if(len(faces) > 0 and flag_for_tag == True):
         try:
@@ -212,12 +224,12 @@ def upload_file():
             status = -1
         elif status == "Neutral":
          status = 0
-        overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], status)
+        overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, text_sentiment, issameParty, emotions_for_overall[0][faces[0]], status)
     else:
         try:
-            overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, emotions_for_overall[0][faces[0]], 0)
+            overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, text_sentiment, issameParty, emotions_for_overall[0][faces[0]], 0)
         except:
-            overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, stronger_emotion, issameParty, "", 0)
+            overall_emotion_output = over_all_emotion.overall_sentiment(person_talking, about_whom, about_who, text_sentiment, issameParty, "", 0)
     if overall_emotion_output == 1:
         overall_emotion_output = "Positive"
     elif overall_emotion_output == -1:
@@ -225,8 +237,22 @@ def upload_file():
     else:
         overall_emotion_output = "Neutral"
 
-    if face_with_tag == "":
-        face_with_tag = ""
+    # if face_with_tag == "":
+    #     face_with_tag = ""
+
+
+    # if text_sentiment < 0:
+    #     text_sentiment = "Negative"
+    # elif text_sentiment > 0:
+    #     text_sentiment = "Positive"
+    # else:
+    #     text_sentiment = "Neutral"
+
+    # os.remove(file_path)
+
+
+
+    print(textemoval , " \n" , textemoname , "\n" , stronger_emotion)
 
     return render_template('module.html', strongest_overall_emotion = overall_emotion_output,text_emotion_len = text_emotion_len, overall_sentiment = overall_emotion_output ,faces = face_with_tag , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
 

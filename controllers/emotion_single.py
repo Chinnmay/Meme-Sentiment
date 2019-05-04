@@ -54,7 +54,7 @@ surprise_trigger_words = surprise_trigger_words['Combined trigger words']
 def generate_trigger_words( trigger_list):
 	temp = []
 	for i in trigger_list:
-		i = tokenizer.tokenize(i)
+		i = tokenizer.tokenize(str(i))
 		for x in i:
 			temp.append(x.lower())
 	return(set(temp))
@@ -142,10 +142,11 @@ def negation(emotion, sent, senten, index):
 
 def main_func(sent):
 #sent = input("enter sentence:")
+
 	stronger_emotion = ""
 	test = TextBlob(sent)
 	sentiment = test.sentiment.polarity
-
+	#print("Sentiment ============== " , sentiment)
 	sent = sent.lower()
 	sent = word_tokenize(sent)
 	senten = nltk.pos_tag(sent)
@@ -245,7 +246,7 @@ def main_func(sent):
 	try:
 	    stronger_emotion = (max(counts.items(), key=operator.itemgetter(1))[0])
 	except:
-		return [],[],[]
+		return [],[],[], []
 	emo_name = list(counts.keys())
 	emo_val = list(counts.values())
 	#print("Emotion Values = ===========" , emo_val , emo_name)
@@ -267,7 +268,7 @@ def main_func(sent):
 		print("error")
 
 
-	return emo_val, emo_name , stronger_emotion
+	return emo_val, emo_name , stronger_emotion , sentiment
 
 	plt.pie(emo_val, labels = emo_name, autopct ='% 1.1f %%', shadow = True)
 	plt.show()

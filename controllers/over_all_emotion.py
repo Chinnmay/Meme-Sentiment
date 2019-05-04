@@ -4,12 +4,12 @@ def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, sam
 	positive_list = ['happy' , 'surprise' , 'neutral']
 
 	try:
-		if text_sentiment.lower() in negative_list:
+		if text_sentiment < 0:
 			text_sentiment = -1
-		elif text_sentiment.lower() in positive_list:
+		elif text_sentiment > 0:
 			text_sentiment = 1
 	except:
-		text_sentiment = 0		
+		text_sentiment = 0
 
 	try:
 		if face_sentiment[0].lower() in negative_list:
@@ -115,7 +115,7 @@ def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, sam
 		elif text_sentiment == 1:
 			return 1
 		else:
-			return "Error in text_sentiment"
+			return 1
 	elif personality_status == -1:
 		if who_is_talking == 1:
 			return -1
@@ -125,11 +125,11 @@ def overall_sentiment(who_is_talking, about_whom, about_who, text_sentiment, sam
 			elif text_sentiment == -1:
 				return 1
 			else:
-				return "Error in text_sentiment"
+				return -1
 		else:
 			return "Error"
 	else:
-		return "Error in personality_status"
+		return 0
 	return "Error"
 
 #sent = input("enter sentence:")
