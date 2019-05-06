@@ -6,8 +6,8 @@
 <script src="https://static.anychart.com/js/8.0.1/anychart-pie.min.js"></script> -->
 <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 
 
   <style>
@@ -30,13 +30,22 @@
 <script type="text/javascript">
 
 
-    function ExploreText(textemoname){
+    function ExploreText(textemoname , faceemoname){
       var len = {{text_emotion_len}}
-      console.log(len);
+      // console.log(len);
       var textemoval = JSON.parse("{{ textemoval }}")
-      console.log(textemoval[0])
+      // console.log(textemoval[0])
 
-      console.log(textemoname);
+      // console.log(textemoname);
+
+      console.log(faceemoname);
+      console.log("{{face_emotions_probablity}}");
+
+      var faceemoval = JSON.parse("{{ face_emotion_probablity }}")
+
+
+
+
 
 
       // var textemoname = JSON.parse("{{ textemoname}}")
@@ -49,7 +58,6 @@
         arr.push(d)
         d = {}
       }
-
 
       var chart = new CanvasJS.Chart("chartContainer", {
       	animationEnabled: true,
@@ -81,6 +89,17 @@
 
       chart.render();
 
+      d = {}
+      arr = []
+
+      for(var i = 0; i < 4; i++)
+      {
+        d["y"] = faceemoval[i] * 100
+        d["label"] = faceemoname[i]
+        arr.push(d)
+        d = {}
+      }
+
 
       var chart1 = new CanvasJS.Chart("chartContainer2", {
       	animationEnabled: true,
@@ -102,24 +121,18 @@
           indexLabelFontSize: 10,
           indexLabelMaxWidth: 53,
 
-      		dataPoints:[
-            {y:40 , label:"anger"},
-            {y:25 , label:"disgust"},
-            {y:35 , label:"sad"}
-          ]
+      		dataPoints:arr
 
       	}]
       });
       chart1.render();
 
-
-
      }
 
 
-     function Determine_Overall(textemoname){
+     function Determine_Overall(textemoname , faceemoname){
 
-       ExploreText(textemoname)
+       ExploreText(textemoname , faceemoname)
 
        overall = ("{{ strongest_overall_emotion }}")
        console.log(overall);
@@ -215,7 +228,7 @@
         <thead>
           <tr>
             <th  style="text-align:center;font-size: 170%;" height="50">
-            <button  type="button" class="btn btn-info" onclick="Determine_Overall({{textemoname}})" >Generate Overall Sentiment</button>
+            <button  type="button" class="btn btn-info" onclick="Determine_Overall({{textemoname}} , {{face_emotions_order}})" >Generate Overall Sentiment</button>
             <!-- <td id = "overall" style="text-align:center;font-size:170%;"></td> -->
             </th>
           </tr>
@@ -230,11 +243,11 @@
     <!-- <div class="col"> -->
         <div class="row">
           <div class="col-md-6">
-            <div id="chartContainer">sdtascndlfbhdcfsajkc;jfkgvjzzvjhzxbjdgfjvcxz</div>
+            <div id="chartContainer"></div>
           </div>
 
           <div class="col-md-6">
-            <div id="chartContainer2">ahsdfsahfsjdgfdgkbmmvbhzcxxnbfkhj</div>
+            <div id="chartContainer2"></div>
           </div>
         </div>
   <br>

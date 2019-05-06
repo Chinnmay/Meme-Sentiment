@@ -72,7 +72,7 @@ def predict(image_file):
     print("Predicting...")
     image_paths = []
     image_paths.append(image_file)
-    print(image_paths)	
+    print(image_paths)
     return List(image_paths) \
         .map(process_image) \
         .filter(is_not_none) \
@@ -88,7 +88,7 @@ def predict(image_file):
 
 def get_emotions(emotion_indices):
     return [EMOTIONS[index] for index in emotion_indices]
-'''
+
 if __name__ == "__main__":
-    accept_commands()
-''' 
+    # accept_commands()
+    print(predict("./static/195.jpg"))

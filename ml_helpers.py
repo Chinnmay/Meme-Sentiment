@@ -6,8 +6,19 @@ from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import cross_val_score
 from sklearn.externals import joblib
 
+
 DEFAULT_PKL_LOCATION = 'emotion_detector.pkl'
 DEFAULT_DATA_LOCATION = 'data.pkl'
+global face_probablities
+face_probablities = []
+
+def get_probablities():
+    global face_probablities
+    # print("Get wala......" , face_probablities)
+    try:
+        return face_probablities[0]
+    except:
+        return []    
 
 def train_ert(x, y):
     ert_classifier = ExtraTreesClassifier(n_estimators=200, max_depth=None, min_samples_split=2, n_jobs=-1)
@@ -128,7 +139,7 @@ def evaluate_model(model, name, x, y):
         print('{name} best score is {score}.'.format(name=name, score=model.best_score_))
         return model.best_score_
     else:
-        scores = cross_val_score(model, x, y)    
+        scores = cross_val_score(model, x, y)
         mean_accuracy = scores.mean()
         print("Result:")
         print('{name} mean accuracy is {accuracy}.'.format(name=name, accuracy=mean_accuracy))
@@ -136,5 +147,9 @@ def evaluate_model(model, name, x, y):
 
 def predict_with_model(model):
     def predict_result(data):
+        # face_emotion_probablity(model.predict_proba(data)
+        global face_probablities
+        face_probablities = model.predict_proba(data)
+        # print("---------------------------SEEEETTTTT"  , face_probablities)
         return model.predict(data)
     return predict_result

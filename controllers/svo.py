@@ -52,9 +52,16 @@ def personabout(face_name,text):
 
 def gethimselforothers(face_name,text,whoistalking):
 #face_name: list of faces identified, text: text in image whoistalking: Chinmay's output(String)
-    whoistalking = whoistalking[0]
-    persons=personabout(face_name,text)
 
+    if(whoistalking != "third_person"):
+        whoistalking = whoistalking[0]
+        whoistalking = whoistalking.replace('[','')
+        whoistalking=whoistalking.replace(']','')
+        whoistalking=whoistalking.replace('\'','')
+
+    print("WHo is Talking........" , whoistalking)
+    persons=personabout(face_name,text)
+    # print(persons)
     if(whoistalking in persons):
         return(1)
     else:
@@ -64,9 +71,11 @@ def gethimselforothers(face_name,text,whoistalking):
 
 def getgradientinothers(face_name,text):
     persons=personabout(face_name,text)
+
     name=persons[0].replace('[','')
     name=name.replace(']','')
     name=name.replace('\'','')
+    # print("Name ................" , name)
     if(name in positive_persons):
         return(1)
     elif(name in negative_persons):

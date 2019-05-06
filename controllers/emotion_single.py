@@ -254,18 +254,18 @@ def main_func(sent):
 
 	series = pd.Series(emo_val, index=emo_name)
 	#print(series)
-	if(sentiment>0.50):
-		print("Sentiment -->	positive")
-	elif(sentiment<-0.50):
-		print("Sentiment --> 	Negative")
-	elif(sentiment == 0.0):
-		print("Sentiment --> 	neutral")
-	elif(sentiment>0.0):
-		print("Sentiment --> 	towards positive")
-	elif(sentiment<0.0):
-		print("Sentiment --> 	towards Negative")
-	else:
-		print("error")
+	# if(sentiment>0.50):
+	# 	print("Sentiment -->	positive")
+	# elif(sentiment<-0.50):
+	# 	print("Sentiment --> 	Negative")
+	# elif(sentiment == 0.0):
+	# 	print("Sentiment --> 	neutral")
+	# elif(sentiment>0.0):
+	# 	print("Sentiment --> 	towards positive")
+	# elif(sentiment<0.0):
+	# 	print("Sentiment --> 	towards Negative")
+	# else:
+	# 	print("error")
 
 
 	return emo_val, emo_name , stronger_emotion , sentiment
