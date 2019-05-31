@@ -18,7 +18,7 @@ def get_probablities():
     try:
         return face_probablities[0]
     except:
-        return []    
+        return []
 
 def train_ert(x, y):
     ert_classifier = ExtraTreesClassifier(n_estimators=200, max_depth=None, min_samples_split=2, n_jobs=-1)
@@ -147,9 +147,11 @@ def evaluate_model(model, name, x, y):
 
 def predict_with_model(model):
     def predict_result(data):
+        print("Data-----------------" , data)
         # face_emotion_probablity(model.predict_proba(data)
         global face_probablities
         face_probablities = model.predict_proba(data)
         # print("---------------------------SEEEETTTTT"  , face_probablities)
+        print(model.predict(data))
         return model.predict(data)
     return predict_result

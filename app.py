@@ -88,7 +88,7 @@ def upload_file():
 
 
         output = Crop_Faces.cropfaces(file_path , "Face_cascade.xml")
-
+        print(output)
         count = output[-1]
         count = (count.get("count" , ""))
         output.pop()
@@ -197,7 +197,7 @@ def upload_file():
 
 
     face_probablities = list(get_probablities())
-
+    print(face_probablities)
     return render_template('module.html', face_emotions_order = face_emotions_order , face_emotion_probablity = face_probablities, strongest_overall_emotion = overall_emotion_output,text_emotion_len = text_emotion_len, overall_sentiment = overall_emotion_output ,faces = face_with_tag , ext_text = content , emotion = emotions , textemoval = textemoval, textemoname = textemoname,stronger_emotion = stronger_emotion, file = f.filename , all_faces = "faces" , img = f)
 
 

@@ -87,6 +87,7 @@ def predict(image_file):
 # Remove DS Store from images: rm ./app/images/*/.DS_Store
 
 def get_emotions(emotion_indices):
+    print("eMOTIONS========" , EMOTIONS)
     return [EMOTIONS[index] for index in emotion_indices]
 
 if __name__ == "__main__":
